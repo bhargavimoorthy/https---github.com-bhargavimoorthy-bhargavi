@@ -1,0 +1,372 @@
+body {
+	background: #eaecee;
+	color: #444;
+}
+#topmenuwrap {
+  background: #222;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #000;
+}
+#topmenu {
+	background: none;
+	border-left: 0px solid #444;
+}
+#headerwrap {
+	background: #222;
+	border-bottom: 1px solid #000;
+}
+#footerwrap {
+	background: #222;
+	border-top: 1px solid #000;
+}
+#header {
+	background: none;
+}
+#logo {
+
+}
+#logo h1 {
+	color:#bac2c7;
+}
+#logo a:link, #logo a:visited, #logo a:hover, #logo a:active {
+border: none;
+}
+#logo h1 a:link, #logo h1 a:visited, #logo h1 a:hover, #logo h1 a:active {
+color: #bac2c7;
+text-decoration: none;
+}
+#headerright{
+	background: none;
+}
+#slogan{
+	background: none;
+}
+#slogan h2{
+	color:#bac2c7;
+}
+h2,.contentheading {
+color: #000;
+}
+h3 {
+color: #000;
+}
+h4 {
+color: #000;
+}
+h5 {
+color: #000;
+}
+h6 {
+color: #000;
+}
+#search{
+	background: none;
+}
+#search input.inputbox {
+	background: #bac2c7;
+	border: 3px solid #444;
+}
+#contentwrap {
+	background: none;
+}
+#wrap {
+	background: none;
+}
+#cbody {
+
+}
+#content60 {
+	background: none;
+}
+#pathway {
+	background: none;
+	border-bottom: 1px solid #eaecee;
+}
+#content {
+	background: none;
+}
+#footer {
+	background: none;
+	color: #a9b1b8;
+}
+#footer .moduletable {
+background: none;
+}
+#sidebar {
+	background: none;
+}
+#sidebar-2 {
+	background: none;
+}
+#user1 {
+
+}
+#user2 {
+color: #a9b1b8;
+}
+#user5 {
+
+}
+#user6 {
+
+}
+fieldset{
+
+}
+.componentheading {
+	color: #000000;
+}
+.mosimage_caption {
+color:#777;
+}
+a:link, a:visited {
+color: #6161c0;
+text-decoration: none;
+}
+a:hover, a:active {
+color: #6161c0;
+text-decoration: underline;
+}
+#user2 a:link, #user2 a:visited, #user2 a:hover, #user2 a:active {
+color: #a9b1b8;
+text-decoration: underline;
+}
+#footer a:link, #footer a:visited, #footer a:hover, #footer a:active {
+color: #a9b1b8;
+text-decoration: underline;
+}
+#a4j a:link, #a4j a:visited, #a4j a:hover, #a4j a:active {
+color: #777;
+text-decoration: underline;
+}
+/* ==== MODULES =======================================  */
+.moduletable {
+	background: none;
+}
+.moduletable h3 {
+	color:#000;
+	background: url(../images/grey/underline.jpg) repeat-x left bottom;
+}
+/* ==== TEXT MODULES =======================================  */
+.moduletable_text {
+  color: #000;
+	background: none;
+	border-bottom: 1px solid #eaecee;
+}
+.moduletable_text h3 {
+	color:#000;
+	background: url(../images/grey/underline.jpg) repeat-x left bottom;
+}
+/* ======= DARK =======================  */
+.moduletable_dark {
+	background: #222 ;
+	color:#a9b1b8;
+	border: 1px solid #222;
+}
+.moduletable_dark h3 {
+	color:#dae2e7;
+	background: url(../images/grey/underline-dark.jpg) repeat-x left bottom;
+}
+.moduletable_dark a:link, .moduletable_dark a:visited, .moduletable_dark a:hover, .moduletable_dark a:active {
+color: #a9b1b8;
+text-decoration: underline;
+}
+/* ======= LIGHT =======================  */
+.moduletable_light {
+	background: #c9cfd3;
+	color:#000;
+	border: 1px solid #b5bcc1;
+}
+.moduletable_light h3 {
+	color:#000;
+	background: url(../images/grey/underline-light.jpg) repeat-x left bottom;
+}
+.moduletable_light a:link, .moduletable_light a:visited, .moduletable_light a:hover, .moduletable_light a:active {
+color: #000;
+text-decoration: underline;
+}
+/* ==== SIDEBAR MODULES =======================================  */
+#sidebar .moduletable {
+	background: none;
+	border-bottom: 1px solid #eaecee;
+}
+#sidebar .moduletable h3 {
+	color:#000;
+	background: url(../images/grey/underline.jpg) repeat-x left bottom;
+}
+/* ==== SIDEBAR2 MODULES =======================================  */
+#sidebar-2 .moduletable {
+	background: none;
+	border-bottom: 1px solid #eaecee;
+}
+#sidebar-2 .moduletable h3 {
+	color:#000;
+	background: url(../images/grey/underline.jpg) repeat-x left bottom;
+}
+/* ======= SEARCH =======================  */
+#search .moduletable {
+	background: none;
+}
+#search .moduletable h3{
+	background: none;
+}
+/* ======= USER1=======================  */
+#user1 .moduletable {
+
+}
+#user1 .moduletable h3{
+	color:#000;
+	border: none;
+background: none;
+}
+/* ======= USER2=======================  */
+#user2 .moduletable {
+
+}
+#user2 .moduletable h3{
+	color:#dae2e7;
+background: none;
+	border-bottom: 0px solid #bac2c7;
+	background: url(../images/grey/underline-dark.jpg) repeat-x left bottom;
+}
+/* ======= USER5=======================  */
+#user5 .moduletable {
+
+}
+#user5 .moduletable h3{
+	color:#000;
+	border: none;
+background: none;
+}
+/* ======= USER6=======================  */
+#user6 .moduletable {
+
+}
+#user6 .moduletable h3{
+	color:#000;
+	border: none;
+background: none;
+}
+/* ========== TOPMENU =====================================*/
+#topmenu .moduletable ul li a {
+background: none;
+	color: #dae2e7;
+	border-right: 1px solid #444;
+	border-left: 1px solid #000;
+}
+#topmenu .moduletable {
+	border-right: 1px solid #000;
+	border-left: 1px solid #444;
+	border-top: 0px solid #000;
+}
+#topmenu .moduletable ul {
+border-top: 0px solid #444;
+}
+
+#topmenu .moduletable ul li.active a {
+color: #b3b3e1;
+background: none;
+}
+#topmenu .moduletable ul li a:hover {
+color: #b3b3e1;
+background: none;
+}
+
+/* ========== SUCKERFISH DROPDOWN ======================*/
+#topmenu .menusfh li ul a {
+ color:#dae2e7 ;
+ border-bottom: 1px solid #000;
+ border-top: 1px solid #444;
+ border-left: 0px solid #069;
+ border-right: 0px solid #069;
+ background: #222;
+}
+#topmenu .menusfh li ul { /* second-level lists */
+ border-top: 1px solid #000;
+}
+#topmenu .moduletable ul.menusfh li a:hover {
+ color:#b3b3e1;
+ background: #222 ;
+}
+#topmenu .moduletable ul.menusfh>li:hover>a, #topmenu .moduletable ul.menusfh li.sfhover a {
+ color: #b3b3e1; 
+ background: #222 ;
+}
+#topmenu .menusfh li:hover ul a, #topmenu .menusfh li.sfhover ul a { /* lists nested under hovered list items */
+ color: #dae2e7; 
+ background: #222 ;
+}
+/* ======= SIDE MENUS ================================  */
+.moduletable_menu {
+background: none ;
+color: #555;
+border-bottom: 1px solid #eaecee;
+}
+.moduletable_menu h3 {
+	color:#000;
+background: none;
+}
+.moduletable_menu li {
+	border-bottom: 1px solid #c4cad2;
+	border-top: 1px solid #fff;
+
+}
+.moduletable_menu ul.menu {
+    border-bottom: 1px solid #fff;
+	border-top: 1px solid #c4cad2;
+}
+.moduletable_menu li ul li {
+	border-bottom:0px solid #ccc;
+	border-top:0px dashed #e4e4e4;
+	background: none;
+}
+.moduletable_menu li a {
+	color: #555;
+}
+.moduletable_menu li ul li a {
+background: none;
+}
+.moduletable_menu li#current a {
+	color:#6161c0;
+}
+.moduletable_menu li#current * a {
+	color:#555;
+}
+.moduletable_menu li ul li a:hover, .moduletable_menu li#current ul li a:hover {
+	color:#6161c0;
+}
+.moduletable_menu li a:link, .moduletable_menu li a:visited {
+color: #555;
+text-decoration: none;
+}
+.moduletable_menu li a:hover {
+color: #6161c0;
+text-decoration: none;
+}
+.moduletable_menu li a:active {
+color: #6161c0;
+text-decoration: none;
+}
+/* ========== content ======================*/
+.contenttoc{
+
+}
+.small{
+color:#777;
+}
+.createdate{
+color:#777;
+}
+.modifydate{
+color:#777;
+}
+td.sectiontableentry1 {
+}
+td.sectiontableentry2 {
+}
+tr.sectiontableentry1 {background: none; }
+tr.sectiontableentry2 {background: none; }
+
+p.strong{font-weight:bold;color:black;}
+p.note{font-style:italic;font-size:1em;}
+tt{font-size:1em;}
