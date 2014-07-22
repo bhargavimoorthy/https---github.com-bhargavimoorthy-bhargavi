@@ -1,0 +1,1432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html class="js wf-museosans1museosans2-n1-inactive wf-museosans1museosans2-i1-inactive wf-museosans1museosans2-n3-inactive wf-museosans1museosans2-i3-inactive wf-museosans1museosans2-n5-inactive wf-museosans1museosans2-i5-inactive wf-museosans1museosans2-n7-inactive wf-museosans1museosans2-i7-inactive wf-museosans1museosans2-n9-inactive wf-museosans1museosans2-i9-inactive wf-inactive" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><head profile="http://www.w3.org/1999/xhtml/vocab"><script type="text/javascript" src="drupal-search-how-indexing-works_files/a_002"></script><script type="text/javascript" src="drupal-search-how-indexing-works_files/a"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta about="/blog/drupal-search-how-indexing-works" property="sioc:num_replies" content="13" datatype="xsd:integer">
+<link rel="shortcut icon" href="http://www.acquia.com/sites/default/files/favicon_2.ico" type="image/vnd.microsoft.icon">
+<meta content="Drupal Search: How indexing works" about="/blog/drupal-search-how-indexing-works" property="dc:title">
+<link rel="shortlink" href="http://www.acquia.com/node/2001231">
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="http://www.acquia.com/blog/drupal-search-how-indexing-works">
+  <title>Drupal Search: How indexing works | Acquia</title>
+  <link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_KorCA2XWBkCoHXvVoBslgxGZm3uxeQkgH-hujKgj30M.css" media="all">
+<link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_dPaQSmeRe_8SLD8w1KZXrC465eanbAh_kqOvkeUJ5YQ.css" media="all">
+<link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_gj3xosEEZdzMEDeY7hNB_gpI3H21ZiFwMJeRsVaRjm4.css" media="all">
+<link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_BraejvdrDiTB9khBxNlpfOr5luDx61t9EbFF9LBeuH4.css" media="all">
+<link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_X11E-Yw_nWR6q0rDqF56BzsdtXVctepzoGHW6vrBY5w.css" media="all">
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_base/css/ie/base-ie.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_base/css/ie/base-ie-7.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_base/css/ie/base-ie-8.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_base/css/ie/base-ie-lte-8.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_base/css/ie/base-ie-lte-9.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if gte IE 9]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_base/css/ie/base-ie-gte-9.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_com/css/ie/ie.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_com/css/ie/ie-7.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_com/css/ie/ie-8.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_com/css/ie/ie-lte-8.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_com/css/ie/ie-lte-9.css?m0816j" media="all" />
+<![endif]-->
+
+<!--[if gte IE 9]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/all/themes/acquia_com/css/ie/ie-gte-9.css?m0816j" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_aW6xPOOQF-hdQ5TrNdx6RE7dESSzuoTC92MY4IpOUvo.css" media="all">
+
+<!--[if (lt IE 9)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="http://www.acquia.com/sites/default/files/css/css_A6frqO6j27ld9xeIT4OZeCDGvGYBKIV7uHhegj6i3bs.css" media="all" />
+<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<link type="text/css" rel="stylesheet" href="drupal-search-how-indexing-works_files/css_-UUEAjCvhM0i3U8RqSLf_khlLsQx40Xu532bEiVNDUo.css" media="all">
+<!--<![endif]-->
+  <script src="drupal-search-how-indexing-works_files/welcome-assist.js" defer="true" async=""></script><script src="drupal-search-how-indexing-works_files/ga_002.js" async="" type="text/javascript"></script><script async="" src="drupal-search-how-indexing-works_files/cbgapi.loaded0"></script><script src="drupal-search-how-indexing-works_files/all.js" id="facebook-jssdk"></script><script src="drupal-search-how-indexing-works_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="drupal-search-how-indexing-works_files/js_HoV11dGZPFawmXjkAgvlTs7lxi0Nyd-JEPDssHq-VCc.js"></script>
+<script type="text/javascript" src="drupal-search-how-indexing-works_files/js_QSwMMdcf_NcR5TXvXlbUpqZrkKJxd7UDjiuI9OP8SyU.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var acquiaPhones = {"DE":{"country":"DE","sales":"0221 3705 0202","sales_text":"0221 3705 0202","support":"+44 (0)1865 520 011","international":"+49 (0)221 3705 0202"},"ES":{"country":"ES","sales":"0911 829 743","sales_text":"0911 829 743","support":"+44 (0)1865 520 011","international":"+34 (0)911 829 743"},"FR":{"country":"FR","sales":"01 79 97 25 70","sales_text":"01 79 97 25 70","support":"+44 (0)1865 520 011","international":"+33 (0)1 79 97 25 70"},"GB":{"country":"GB","sales":"01865 520 010","sales_text":"01865 520 010","support":"01865 520 011","international":"+44 (0)1865 520 010"},"NL":{"country":"NL","sales":"020 890 3987","sales_text":"020 890 3987","support":"+44 (0)1865 520 011","international":"+31 (0)20 890 3987"},"US":{"country":"US","sales":"855.430.7700","sales_text":"888.9.ACQUIA","support":"888.922.7842","international":"+1.781.238.8600"}};
+//--><!]]>
+</script>
+<script type="text/javascript" src="drupal-search-how-indexing-works_files/js_WrovdDdkDncy8MqOWBZZTV_NFuxBLQ0NYbucsqv6bqw.js"></script>
+<script type="text/javascript" src="drupal-search-how-indexing-works_files/js_LnoM01vKe4XwUZZr7O3GE22OCdmtYG-EgLIA27zLOJY.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _vis_opt_account_id = 13378;
+var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+document.write('<s' + 'cript src="' + _vis_opt_protocol + 'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a=' + _vis_opt_account_id + '&url=' + encodeURIComponent(document.URL) + '&random=' + Math.random() + '" type="text/javascript">' + '<\/s' + 'cript>');
+//--><!]]>
+</script><script src="drupal-search-how-indexing-works_files/js_visitor_settings.htm" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if(typeof(_vis_opt_settings_loaded) == "boolean") { document.write('<s' + 'cript src="' + _vis_opt_protocol + 'd5phz18u4wuww.cloudfront.net/vis_opt_no_jquery.js" type="text/javascript">' + '<\/s' + 'cript>'); }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if(typeof(_vis_opt_settings_loaded) == "boolean" && typeof(_vis_opt_top_initialize) == "function") { _vis_opt_top_initialize(); vwo_$(document).ready(function() { _vis_opt_bottom_initialize(); }); }
+//--><!]]>
+</script>
+<script type="text/javascript" src="drupal-search-how-indexing-works_files/js__G1uxQMmOKqbD0RHAII674-YkyZ-DU1eigGdJi8dw7Y.js"></script>
+<script type="text/javascript" src="drupal-search-how-indexing-works_files/js_3xr88l0WMN_7RaODkMqv3Tnio1oqLtgVKmqHiVGTO5w.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"acquia_com","theme_token":"ergAsKQY923HA0jWnjD0rZUIJhD4UOi5cJ4fpP04KII","js":{"0":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jscrollpane\/lib\/jquery.mousewheel.js":1,"sites\/all\/modules\/contrib\/jscrollpane\/lib\/jquery.jscrollpane.min.js":1,"misc\/ajax.js":1,"1":1,"sites\/all\/modules\/contrib\/mollom\/mollom.js":1,"sites\/all\/modules\/custom\/acquia_features\/acquia_frontpage\/acquia_frontpage.js":1,"sites\/all\/modules\/custom\/acquia_phones\/js\/acquia_phones.js":1,"sites\/all\/modules\/contrib\/fivestar\/js\/fivestar.js":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/jquery.bgiframe.min.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/sftouchscreen.js":1,"sites\/all\/modules\/contrib\/typekit\/typekit.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"2":1,"3":1,"4":1,"misc\/jquery.form.js":1,"misc\/form.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/boxes\/boxes.js":1,"sites\/all\/modules\/contrib\/superfish\/superfish.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"sites\/all\/themes\/acquia_base\/js\/acquia-base.js":1,"sites\/all\/themes\/acquia_com\/js\/acquia-com.js":1,"sites\/all\/themes\/acquia_com\/js\/scripts.js":1,"sites\/all\/themes\/acquia_com\/js\/doormat-menu.js":1,"sites\/all\/themes\/acquia_com\/js\/jquery.equalheights.js":1,"sites\/all\/themes\/acquia_com\/js\/jquery.history.js":1,"sites\/all\/themes\/acquia_com\/js\/theme.js":1,"sites\/all\/themes\/acquia_com\/js\/section-partners.js":1,"sites\/all\/themes\/acquia_com\/js\/jquery.hoverIntent.js":1,"sites\/all\/themes\/acquia_com\/plugins\/cluetip\/jquery.cluetip.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/contrib\/jscrollpane\/lib\/jquery.jscrollpane.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/codefilter\/codefilter.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/fivestar\/css\/fivestar.css":1,"sites\/all\/modules\/contrib\/fivestar\/widgets\/outline\/outline.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-vertical.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-navbar.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/contrib\/boxes\/boxes.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-reset.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-mobile.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-alpha.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-menu.css":1,"public:\/\/cpn\/sharethis-sharethis_block.css":1,"sites\/all\/themes\/acquia_base\/css\/ie\/base-ie.css":1,"sites\/all\/themes\/acquia_base\/css\/ie\/base-ie-7.css":1,"sites\/all\/themes\/acquia_base\/css\/ie\/base-ie-8.css":1,"sites\/all\/themes\/acquia_base\/css\/ie\/base-ie-lte-8.css":1,"sites\/all\/themes\/acquia_base\/css\/ie\/base-ie-lte-9.css":1,"sites\/all\/themes\/acquia_base\/css\/ie\/base-ie-gte-9.css":1,"sites\/all\/themes\/acquia_com\/css\/ie\/ie.css":1,"sites\/all\/themes\/acquia_com\/css\/ie\/ie-7.css":1,"sites\/all\/themes\/acquia_com\/css\/ie\/ie-8.css":1,"sites\/all\/themes\/acquia_com\/css\/ie\/ie-lte-8.css":1,"sites\/all\/themes\/acquia_com\/css\/ie\/ie-lte-9.css":1,"sites\/all\/themes\/acquia_com\/css\/ie\/ie-gte-9.css":1,"sites\/all\/themes\/acquia_base\/css\/base-colors.css":1,"sites\/all\/themes\/acquia_base\/css\/base-small.css":1,"sites\/all\/themes\/acquia_com\/css\/colors.css":1,"sites\/all\/themes\/acquia_com\/css\/small.css":1,"sites\/all\/themes\/acquia_com\/css\/plugins\/cluetip\/jquery.cluetip.css":1,"sites\/all\/themes\/acquia_com\/css\/section-resources.css":1,"sites\/all\/themes\/acquia_com\/css\/section-blog.css":1,"sites\/all\/themes\/acquia_com\/css\/section-newsroom.css":1,"sites\/all\/themes\/acquia_com\/css\/section-quotes.css":1,"sites\/all\/themes\/acquia_com\/css\/section-whitepapers.css":1,"sites\/all\/themes\/acquia_com\/css\/section-tv.css":1,"sites\/all\/themes\/acquia_com\/css\/section-audience.css":1,"sites\/all\/themes\/acquia_com\/css\/section-partners.css":1,"sites\/all\/themes\/acquia_com\/css\/section-team.css":1,"sites\/all\/themes\/acquia_com\/css\/section-about.css":1,"sites\/all\/themes\/acquia_com\/css\/section-podcasts.css":1,"sites\/all\/themes\/acquia_com\/css\/section-downloads.css":1,"sites\/all\/themes\/acquia_com\/css\/section-products.css":1,"sites\/all\/themes\/acquia_com\/css\/section-careers.css":1,"sites\/all\/themes\/acquia_com\/css\/section-solutions.css":1,"sites\/all\/themes\/acquia_com\/css\/section-webinars.css":1,"sites\/all\/themes\/acquia_com\/css\/section-events.css":1,"sites\/all\/themes\/acquia_com\/css\/olark-chat.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-16.css":1,"ie::normal::sites\/all\/themes\/acquia_base\/css\/acquia-base-alpha-default-normal.css":1,"ie::normal::sites\/all\/themes\/acquia_com\/css\/acquia-com-alpha-default-normal.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-16.css":1,"narrow::sites\/all\/themes\/acquia_base\/css\/acquia-base-alpha-default-narrow.css":1,"narrow::sites\/all\/themes\/acquia_com\/css\/acquia-com-alpha-default-narrow.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-12.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-16.css":1,"normal::sites\/all\/themes\/acquia_base\/css\/acquia-base-alpha-default-normal.css":1,"normal::sites\/all\/themes\/acquia_com\/css\/acquia-com-alpha-default-normal.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1}},"acquia_phones":{"acquia_phones_filepath":"http:\/\/www.acquia.com\/sites\/default\/files\/acquia-phones-json.js"},"fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"typekitKey":"ohp3lvm","getQ":"node\/2001231","superfish":{"1":{"sf":{"delay":"500","animation":{"opacity":"show","height":"show","width":"show"},"speed":"fast","autoArrows":false,"dropShadows":false,"disableHI":false},"plugins":{"bgiframe":true,"supersubs":{"minWidth":12,"maxWidth":27,"extraWidth":1}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip","trackDomainMode":"1"}});
+//--><!]]>
+</script>
+<script src="drupal-search-how-indexing-works_files/checkOAuth.esi" type="text/javascript"></script><script src="drupal-search-how-indexing-works_files/getCount2.htm" type="text/javascript"></script><script gapi_processed="true" src="drupal-search-how-indexing-works_files/plusone.js" type="text/javascript"></script><link href="drupal-search-how-indexing-works_files/buttons.css" type="text/css" rel="stylesheet"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size: 11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size: 24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size: 14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yO/r/_j03izEX40U.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size: 12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size: 12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size: 16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:relative;vertical-align:text-bottom}
+.fb_iframe_widget span{position:relative}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yH/r/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size: 24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size: 13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size: 11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size: 10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size: 10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size: 22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yU/r/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yX/r/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size: 10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size: 11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size: 13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size: 13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size: 11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+/* @noflip */
+.fbpluginrecommendationsbarleft{left:10px}
+/* @noflip */
+.fbpluginrecommendationsbarright{right:10px}
+</style><style type="text/css">#cloud-pricing-page,#main-content h4,.contentHead,.tk-museo-sans,blockquote,body,h1,h2,h3,h4,h5,h6,ol,p,ul{font-family:museo-sans-1,museo-sans-2,helvetica-neue,helvetica,"Arial",sans-serif;}</style><link href="drupal-search-how-indexing-works_files/ohp3lvm-d.css" rel="stylesheet"><script src="drupal-search-how-indexing-works_files/checkOAuth.esi" type="text/javascript"></script><script defer="defer" async="" src="drupal-search-how-indexing-works_files/application.js"></script><style type="text/css">.olark-key,#hbl_code,#olark-data{display: none !important;}</style></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-2001231 node-type-blog i18n-en context-blog en"><div id="olark" style="display: none;"><olark><iframe id="olark-loader" frameborder="0"></iframe></olark></div>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page" class="clearfix">
+      <div id="section-header" class="section section-header">
+  <div id="zone-header-1-wrapper" class="zone-wrapper zone-static-wrapper zone-header-1-wrapper clearfix">  
+  <div id="zone-header-1" class="zone zone-header-1 zone-static container-16 clearfix horizontal dropdown reverse divider">
+      <div id="region-header-1-1" class="region region-header-1-1 grid-8">
+    <div id="block-menu-menu-acquia-properties" class="block block-menu  block-menu-acquia-properties block-menu-menu-acquia-properties first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title">Acquia Properties</h2>
+            
+    <div class="content clearfix">
+      <ul class="menu"><li class="first leaf contains-link"><a href="http://drupalshowcase.com/?utm_source=acquia.com&amp;utm_medium=top%2Bmenu&amp;utm_campaign=Drupal%2BShowcase" target="_blank">Drupal Showcase</a></li>
+<li class="leaf contains-link"><a href="http://network.acquia.com/?utm_source=acquia.com&amp;utm_medium=top%2Bmenu&amp;utm_campaign=Acquia%2BNetwork" target="_blank">Acquia Network</a></li>
+<li class="leaf contains-link"><a href="http://www.drupalgardens.com/?utm_source=acquia.com&amp;utm_medium=top%2Bmenu&amp;utm_campaign=Drupal%2BGardens" target="_blank">Drupal Gardens</a></li>
+<li class="last leaf contains-link"><a href="http://www.acquia.com/products-services/?utm_source=acquia.com&amp;utm_medium=top%2Bmenu&amp;utm_campaign=More%2Blink" target="_self">More...</a></li>
+</ul>    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-header-1-2" class="region region-header-1-2 grid-8">
+    <div id="block-search-form" class="block block-search  block-form block-search-form first odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <form action="/blog/drupal-search-how-indexing-works" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." id="edit-search-block-form--2" name="search_block_form" size="15" maxlength="128" class="form-text" type="text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input id="edit-submit" name="op" value="Search" class="form-submit" type="submit"></div><input name="form_build_id" value="form-CnxfFJEmYzVlrxxo2pJrCseUhgDLPLanD4Q-XJX43VE" type="hidden">
+<input name="form_id" value="search_block_form" type="hidden">
+</div>
+</div></form>    </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system  block-menu block-user-menu block-system-user-menu last even">
+  <div class="inner clearfix">
+              <h2 class="block-title">User menu</h2>
+            
+    <div class="content clearfix">
+      <ul class="menu"><li class="first leaf contains-link"><a href="http://www.acquia.com/about-us/contact" title="Click for local Acquia phone numbers" id="contact-phone">888.9.ACQUIA</a></li>
+<li class="last leaf contains-link"><a href="http://www.acquia.com/user/login">Sign in</a></li>
+</ul>    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div><div id="zone-header-2-wrapper" class="zone-wrapper zone-static-wrapper zone-header-2-wrapper clearfix">  
+  <div id="zone-header-2" class="zone zone-header-2 zone-static container-16 clearfix horizontal dropdown reverse context">
+      <div id="region-header-2-1" class="region region-header-2-1 grid-5">
+    <div id="block-delta-blocks-delta-blocks-site-name" class="block block-delta-blocks  block-delta-blocks-site-name block-delta-blocks-delta-blocks-site-name first last odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <h2 id="site-name"><a href="http://www.acquia.com/" title="Return to the Acquia home page" rel="home"><span>Acquia</span></a></h2>    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-header-2-2" class="region region-header-2-2 grid-11">
+    <div style="border-bottom-left-radius: 15px;" id="block-superfish-1" class="block block-superfish  block-1 block-superfish-1 first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title">Main menu</h2>
+            
+    <div class="content clearfix">
+      <ul id="superfish-1" class="sf-menu main-menu sf-horizontal sf-style-none sf-total-items-6 sf-parent-items-6 sf-single-items-0 superfish-processed sf-js-enabled"><li id="menu-2980-1" class="first odd sf-item-1 sf-depth-1 sf-total-children-13 sf-parent-children-0 sf-single-children-13 menuparent contains-link"><a href="http://www.acquia.com/products-services" class="sf-depth-1  menuparent">What we offer</a><ul style="display: none; visibility: hidden; float: none; width: 12em; min-width: 765px; padding-left: 15px; position: absolute; left: 0px; top: 33px;"><li style="white-space: normal; float: left; width: 100%; z-index: 1;" id="menu-714-1" class="first odd sf-item-1 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/acquia-network" class="sf-depth-2 ">Support &amp; cloud services</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 2;" id="menu-1081-1" class="middle even sf-item-2 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/acquia-commons-social-business-software" class="sf-depth-2 ">Social business software</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 3;" id="menu-715-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/acquia-managed-cloud" class="sf-depth-2 ">Enterprise cloud hosting</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 4;" id="menu-1332-1" class="middle even sf-item-4 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/acquia-dev-cloud" class="sf-depth-2 ">Dev cloud hosting</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 5;" id="menu-1336-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/drupal-gardens" class="sf-depth-2 ">Drupal Gardens</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 6;" id="menu-719-1" class="middle even sf-item-6 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/acquia-professional-services" class="sf-depth-2 ">Professional Services</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 7;" id="menu-1338-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/remote-administration" class="sf-depth-2 ">Remote Administration</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 8;" id="menu-1337-1" class="middle even sf-item-8 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/products-services/drupal-training" class="sf-depth-2 ">Drupal Training</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 9;" id="menu-4086-1" class="middle odd sf-item-9 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/drupal-solutions/conference-organizing-distribution" title="Conference Organizing Distribution (COD)" class="sf-depth-2 ">Conference Organizing</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 10;" id="menu-1531-1" class="middle even sf-item-10 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/drupal-solutions/publishing" class="sf-depth-2 ">Publishing solutions</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 11;" id="menu-1581-1" class="middle odd sf-item-11 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/drupal-solutions/government" class="sf-depth-2 ">Government solutions</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 12;" id="menu-3024-1" class="middle even sf-item-12 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/drupal-solutions/education" class="sf-depth-2 ">Education solutions</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 13;" id="menu-4521-1" class="last odd sf-item-13 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/trial" title="Free 30-Day Trial Acquia Network" class="sf-depth-2 ">Free 30-Day Trial</a></li></ul></li><li id="menu-3009-1" class="middle even sf-item-2 sf-depth-1 sf-total-children-12 sf-parent-children-0 sf-single-children-12 menuparent contains-link"><a href="http://www.acquia.com/resources" class="sf-depth-1  menuparent">Resources</a><ul style="display: none; visibility: hidden; float: none; width: 12em; min-width: 621px; padding-left: 159px; position: absolute; left: -144px; top: 33px;"><li style="white-space: normal; float: left; width: 100%; z-index: 1;" id="menu-3013-1" class="first odd sf-item-1 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/blog" class="sf-depth-2 ">Blog</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 2;" id="menu-3012-1" class="middle even sf-item-2 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/customers" class="sf-depth-2 ">Customers</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 3;" id="menu-3019-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/tv" class="sf-depth-2 ">Acquia TV</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 4;" id="menu-3020-1" class="middle even sf-item-4 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/podcasts" class="sf-depth-2 ">Podcasts</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 5;" id="menu-3021-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/webinars" class="sf-depth-2 ">Webinars</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 6;" id="menu-3022-1" class="middle even sf-item-6 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/recorded_webinars" class="sf-depth-2 ">Recorded webinars</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 7;" id="menu-6171-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/ebooks" class="sf-depth-2 ">eBooks</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 8;" id="menu-3016-1" class="middle even sf-item-8 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/whitepapers" class="sf-depth-2 ">White papers</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 9;" id="menu-3023-1" class="middle odd sf-item-9 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/community/resources/events" class="sf-depth-2 ">Events</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 10;" id="menu-3341-1" class="middle even sf-item-10 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/resources/casestudies" class="sf-depth-2 ">Case Studies</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 11;" id="menu-3371-1" class="middle odd sf-item-11 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://network.acquia.com/documentation" target="_blank" class="sf-depth-2 ">Product documentation</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 12;" id="menu-3441-1" class="last even sf-item-12 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/what-is-drupal" class="sf-depth-2 ">What is Drupal?</a></li></ul></li><li id="menu-494-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-7 sf-parent-children-1 sf-single-children-6 menuparent contains-link"><a href="http://www.acquia.com/about-us" class="sf-depth-1  menuparent">About</a><ul style="display: none; visibility: hidden; float: none; width: 12em; min-width: 511px; padding-left: 269px; position: absolute; left: -254px; top: 33px;"><li style="white-space: normal; float: left; width: 100%; z-index: 1;" id="menu-739-1" class="first odd sf-item-1 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/careers" class="sf-depth-2 ">Careers</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 2;" id="menu-740-1" class="middle even sf-item-2 sf-depth-2 contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/about-us/newsroom" class="sf-depth-2 ">Newsroom</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 3;" id="menu-1536-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/about-us/leadership" class="sf-depth-2 ">Leadership</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 4;" id="menu-794-1" class="middle even sf-item-4 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/about-us/team" class="sf-depth-2 ">Team</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 5;" id="menu-741-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/about-us/investors" class="sf-depth-2 ">Investors</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 6;" id="menu-1016-1" class="middle even sf-item-6 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/about-us/contact" class="sf-depth-2 ">Contact</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 7;" id="menu-3266-1" class="last odd sf-item-7 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/about-us/board" class="sf-depth-2 ">Board of directors</a></li></ul></li><li id="menu-703-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent contains-link"><a href="http://www.acquia.com/partners" class="sf-depth-1  menuparent">Partners</a><ul style="display: none; visibility: hidden; float: none; width: 12em; min-width: 441px; padding-left: 339px; position: absolute; left: -324px; top: 33px;"><li style="white-space: normal; float: left; width: 100%; z-index: 1;" id="menu-734-1" class="first odd sf-item-1 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/partners" class="sf-depth-2 ">Partner program</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 2;" id="menu-735-1" class="middle even sf-item-2 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/partners/finder" class="sf-depth-2 ">Partner Finder</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 3;" id="menu-1330-1" class="last odd sf-item-3 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/partners/become-an-acquia-partner" class="sf-depth-2 ">Become a Partner</a></li></ul></li><li id="menu-2997-1" class="middle odd sf-item-5 sf-depth-1 sf-total-children-6 sf-parent-children-0 sf-single-children-6 menuparent contains-link"><a href="http://www.acquia.com/downloads" class="sf-depth-1  menuparent">Free Downloads</a><ul style="display: none; visibility: hidden; float: none; width: 12em; min-width: 343px; padding-left: 437px; position: absolute; left: -422px; top: 33px;"><li style="white-space: normal; float: left; width: 100%; z-index: 1;" id="menu-3000-1" class="first odd sf-item-1 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/downloads" class="sf-depth-2 ">Acquia Drupal</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 2;" id="menu-3001-1" class="middle even sf-item-2 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/downloads" class="sf-depth-2 ">Dev Desktop</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 3;" id="menu-2999-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/downloads" class="sf-depth-2 ">Commons</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 4;" id="menu-4526-1" class="middle even sf-item-4 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/downloads" class="sf-depth-2 ">Conference Organizing</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 5;" id="menu-3003-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/downloads" class="sf-depth-2 ">OpenPublish</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 6;" id="menu-3002-1" class="last even sf-item-6 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/downloads" class="sf-depth-2 ">OpenScholar</a></li></ul></li><li id="menu-3006-1" class="last even sf-item-6 sf-depth-1 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent contains-link"><a href="http://www.acquia.com/acquia-network-subscriptions" class="sf-depth-1  menuparent">Pricing</a><ul style="display: none; visibility: hidden; float: none; width: 12em; min-width: 185px; padding-left: 595px; position: absolute; left: -580px; top: 33px;"><li style="white-space: normal; float: left; width: 100%; z-index: 1;" id="menu-2661-1" class="first odd sf-item-1 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/acquia-network-subscriptions" class="sf-depth-2 ">Acquia Network</a></li><li style="white-space: normal; float: left; width: 100%; z-index: 2;" id="menu-2666-1" class="last even sf-item-2 sf-depth-2 sf-no-children contains-link"><a style="float: none; width: auto;" href="http://www.acquia.com/cloud-pricing" class="sf-depth-2 ">Dev Cloud</a></li></ul></li></ul>    </div>
+  </div>
+</div>
+  </div>
+  <h1 class="title" id="page-title">Drupal Search: How indexing works</h1></div>
+</div><div id="zone-header-3-wrapper" class="zone-wrapper zone-static-wrapper zone-header-3-wrapper clearfix">  
+  <div id="zone-header-3" class="zone zone-header-3 zone-static container-16 clearfix horizontal dropdown reverse">
+      </div>
+</div></div>    
+      <div id="section-content" class="section section-content">
+  <div id="zone-content-3-wrapper" class="zone-wrapper zone-static-wrapper zone-content-3-wrapper clearfix">  
+  <div id="zone-content-3" class="zone zone-content-3 zone-static container-16 clearfix type">
+    <div id="region-content" class="region region-content grid-12 type">
+  <div class="region-inner region-content-inner">
+    <a id="main-content"></a>
+                      
+                    <div class="tabs clearfix"></div>        <div id="block-sharethis-sharethis-block" class="block block-sharethis  block-sharethis-block block-sharethis-sharethis-block first odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <span st_processed="yes" st_url="http://www.acquia.com/blog/drupal-search-how-indexing-works" st_title="Drupal Search: How indexing works @acquia" class="st_twitter_hcount" displaytext="Tweet"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/twitter_counter.png&quot;);" class="stMainServices st-twitter-counter">&nbsp;<img style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;" src="drupal-search-how-indexing-works_files/check-big.png"></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">3</span></span></span></span></span></span><span st_processed="yes" st_url="http://www.acquia.com/blog/drupal-search-how-indexing-works" st_title="Drupal Search: How indexing works" class="st_facebook_hcount" displaytext="Facebook"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/facebook_counter.png&quot;);" class="stMainServices st-facebook-counter">&nbsp;<img style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;" src="drupal-search-how-indexing-works_files/check-big.png"></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span><span st_processed="yes" st_url="http://www.acquia.com/blog/drupal-search-how-indexing-works" st_title="Drupal Search: How indexing works" class="st_linkedin_hcount" displaytext="LinkedIn"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/linkedin_counter.png&quot;);" class="stMainServices st-linkedin-counter">&nbsp;<img style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;" src="drupal-search-how-indexing-works_files/check-big.png"></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span><span st_processed="yes" st_url="http://www.acquia.com/blog/drupal-search-how-indexing-works" st_title="Drupal Search: How indexing works" class="st_email_hcount" displaytext="Email"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span class="stButton_gradient"><span class="chicklets email">Email</span><img style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;" src="drupal-search-how-indexing-works_files/check-big.png"></span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">0</span></span></span></span></span></span><span st_processed="yes" st_url="http://www.acquia.com/blog/drupal-search-how-indexing-works" st_title="Drupal Search: How indexing works" class="st_plusone_hcount" displaytext="Google Plus One"><div style="display:inline-block;overflow:hidden;line-height:0px;position:relative;vertical-align:middle;bottom:0px;width:75px; height:21px;">&nbsp;<div style="height: 20px; width: 90px; display: inline-block; text-indent: 0pt; margin: 0pt; padding: 0pt; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline;" id="___plusone_0"><iframe allowtransparency="true" hspace="0" id="I1_1330766554193" marginheight="0" marginwidth="0" name="I1_1330766554193" src="drupal-search-how-indexing-works_files/fastbutton.htm" style="position: static; left: 0pt; top: 0pt; width: 90px; margin: 0px; border-style: none; visibility: visible; height: 20px;" tabindex="-1" vspace="0" title="+1" frameborder="0" scrolling="no" width="100%"></iframe></div></div></span><span st_processed="yes" st_url="http://www.acquia.com/blog/drupal-search-how-indexing-works" st_title="Drupal Search: How indexing works" class="st_fblike_hcount" displaytext="Facebook Like"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:16px;vertical-align:bottom;overflow:visible;"><div id="fb-root"></div><div data-href="http://www.acquia.com/blog/drupal-search-how-indexing-works" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-show-faces="false" data-layout="button_count" data-send="false" data-action=""><span><iframe src="drupal-search-how-indexing-works_files/like.htm" class="fb_ltr" title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 20px; width: 90px;" name="f313baad6175bb" id="f30bc6a3caba41a" scrolling="no"></iframe></span></div></span></span><script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="drupal-search-how-indexing-works_files/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'1e08f524-00b5-43c2-af44-750c4327271e'});</script>    </div>
+  </div>
+</div>
+<div id="block-system-main" class="block block-system  block-main block-system-main last even block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <div id="node-2001231" class="node node-blog node-published node-not-promoted node-not-sticky author-robert-douglass odd clearfix clearfix" about="/blog/drupal-search-how-indexing-works" typeof="sioc:Item foaf:Document">
+
+      
+      <div class="submitted">
+      Posted on <span property="dc:date dc:created" content="2008-05-09T01:19:54-04:00" datatype="xsd:dateTime">Fri, May 09, 2008 01:19</span> by <span rel="sioc:has_creator"><a href="http://www.acquia.com/about-us/team/robert-douglass">Robert Douglass</a></span>    </div>
+  
+  <div class="user-picture">
+    <a href="http://www.acquia.com/users/robert-douglass"><img typeof="foaf:Image" src="drupal-search-how-indexing-works_files/default_avatar.png" alt="Robert Douglass's picture" title="Robert Douglass's picture" height="94" width="94"></a>  </div>
+
+  <div class="content-wrapper">
+    <div class="clearfix">
+
+    <div class="content">
+      <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>This
+ article explores the process of taking HTML content from Drupal nodes 
+and indexing it for the purpose of search and text retrieval at a later 
+time. The code examples apply to Drupal 6.</p>
+<h2>Finding what to index</h2>
+<p>Indexing happens when cron.php is run, and the search module starts the whole process by invoking <a href="http://api.drupal.org/api/function/hook_update_index/6">hook_update_index</a>.
+ This gives each module the chance to keep its search index needs up to 
+date. This article follows what happens in the node module's <a href="http://api.drupal.org/api/function/node_update_index/6">node_update_index</a> function.</p>
+<p>The node_update_index function first finds out what node ids are new,
+ have been updated, or have new comments. These node ids are then sent 
+to <a href="http://api.drupal.org/api/function/_node_index_node/6">_node_index_node</a> which prepares them to be indexed by loading them, and building them in a way that is particular to the needs of indexing.</p>
+<h4>node.module: _node_index_node()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Build the node body.<br></span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">build_mode </span><span style="color: #007700">= </span><span style="color: #0000BB">NODE_BUILD_SEARCH_INDEX</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$node </span><span style="color: #007700">= </span><span style="color: #0000BB">node_build_content</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">, </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">, </span><span style="color: #0000BB">FALSE</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">body </span><span style="color: #007700">= </span><span style="color: #0000BB">drupal_render</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">);
+<p></p></span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #DD0000">'&lt;h1&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">check_plain</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">title</span><span style="color: #007700">) . </span><span style="color: #DD0000">'&lt;/h1&gt;' </span><span style="color: #007700">. </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">body</span><span style="color: #007700">;
+<p></p></span><span style="color: #FF8000">// Fetch extra data normally not visible<br></span><span style="color: #0000BB">$extra </span><span style="color: #007700">= </span><span style="color: #0000BB">node_invoke_nodeapi</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">, </span><span style="color: #DD0000">'update index'</span><span style="color: #007700">);<br>foreach (</span><span style="color: #0000BB">$extra </span><span style="color: #007700">as </span><span style="color: #0000BB">$t</span><span style="color: #007700">) {<br>&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">.= </span><span style="color: #0000BB">$t</span><span style="color: #007700">;<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 1: Building a node for search indexing.</em></p>
+<p>The <code>$node-&gt;build_mode</code> flag is set to <code>NODE_BUILD_SEARCH_INDEX</code>. This value, and its cousin <code>NODE_BUILD_SEARCH_RESULT</code>, don't play any role in Drupal core, but they could theoretically be used in <a href="http://api.drupal.org/api/function/hook_view/6">hook_view</a> and <a href="http://api.drupal.org/api/function/hook_nodeapi/6">hook_nodeapi</a> implementations to build the node differently for the benefit of the search index.</p>
+<p>The body of the node is then built with calls to <a href="http://api.drupal.org/api/function/node_build_content/6">node_build_content</a> and <a href="http://api.drupal.org/api/function/drupal_render/6">drupal_render</a>.
+ This is followed by passing the built node along to any module that 
+implements the 'update index' operation of hook_nodapi. This is an 
+important moment in the process because modules like comment and 
+taxonomy use the opportunity to add things (such as comments, cck 
+fields, and taxonomy terms) to the text that will get indexed for this 
+node.</p>
+<h2>Text is sent into search_index</h2>
+<p>After the node is built and prepared to be indexed, it is sent to the <a href="http://api.drupal.org/api/function/search_index/6">search_index</a>
+ function where all the fun happens. Drupal is chiefly focused on 
+handling HTML content, so it is therefore not surprising that 
+search_index is best equipped to deal with HTML. Drupal's search 
+evaluates the relative importance of any word in a document based on a 
+number of criteria, one of which is its enclosing HTML tag. The HTML 
+tags to which Drupal assigns value are the following:</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>$tags </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'h1' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">25</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'h2' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">18</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'h3' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">15</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'h4' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">12</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'h5' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">9</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'h6' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">6</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'u' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">3</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'b' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">3</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'i' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">3</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'strong' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">3</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'em' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">3</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'a' </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">10</span><span style="color: #007700">);<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 2: The HTML tags that have value in the search index.</em></p>
+<p>The array keys are the tag names, and the values are weights that 
+will affect the scoring of the words associated with these tags.</p>
+<p>The next step in search_index is to prepare the text for tokenization by inserting spaces in between tags and texts:</p>
+<p><img src="drupal-search-how-indexing-works_files/spacesinserted_0.png" alt="Spaces inserted between tags and text" width="200"><br><em>Figure 3: Prepare to be tokenized.</em></p>
+<p>Any tags not in the $tags variable are removed. The text is then 
+split in such a way that the whole document becomes an array that 
+alternates between text and tag fragments. This is an example of cunning
+ and clever code. For example, the following text gets split into the 
+array in figure 1.</p>
+<blockquote><p>&lt;p&gt;&lt;strong&gt;Badgers&lt;/strong&gt; are the new ponies.&lt;/p&gt;</p></blockquote>
+<div class="codeblock"><code>Array<br>(<br>&nbsp;&nbsp;&nbsp; [0] =&gt; <br>&nbsp;&nbsp;&nbsp; [1] =&gt; h1<br>&nbsp;&nbsp;&nbsp; [2] =&gt; Taxonomy<br>&nbsp;&nbsp;&nbsp; [3] =&gt; /h1<br>&nbsp;&nbsp;&nbsp; [4] =&gt; <br>&nbsp;&nbsp;&nbsp; [5] =&gt; strong<br>&nbsp;&nbsp;&nbsp; [6] =&gt; Badgers<br>&nbsp;&nbsp;&nbsp; [7] =&gt; /strong<br>&nbsp;&nbsp;&nbsp; [8] =&gt; are the new ponies.<br>&nbsp;&nbsp;&nbsp; [9] =&gt; a<br>&nbsp;&nbsp;&nbsp; [10] =&gt; ()<br>&nbsp;&nbsp;&nbsp; [11] =&gt; /a<br>&nbsp;&nbsp;&nbsp; [12] =&gt; <br>)</code></div>
+<p><em>Figure 4: The array of tokens for indexing.</em></p>
+<p>Look carefully and you will see that the even positions in the array 
+are occupied with text (or are empty), and the odd positions in the 
+array have tag contents (literally whatever is in between the &lt; and 
+the &gt;). With this structured array of tokens dependably in place, the
+ tokens are iterated over and the $tag variable is used as an even/odd 
+counter directing the processing into either the tag handling area or 
+the text handling area.</p>
+<p>The values in position 9-11 (a, (), and a) are artifacts from 
+search_nodeapi() which would otherwise be adding in link text from 
+incoming links found in other nodes. This is discussed in detail below.</p>
+<h2>Tag handling</h2>
+<p>Once the text is tokenized as shown in Figure 3, search_index loops 
+over the tokens, alternating between tags and the text in the middle. 
+Within the context of the token loop, tag handling is primarily about 
+watching the opening and closing of tags, in a nested fashion, and 
+ascribing the appropriately boosted score to the text in between. 
+Following the array in Figure 3, for example, the item in position #1, <code>h1</code>,
+ will get pushed onto a an array called $tagstack. At the same time, the
+ $score will be increased according to that tag's value in the $tags 
+array.</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Add to open tag stack and increment score<br></span><span style="color: #0000BB">array_unshift</span><span style="color: #007700">(</span><span style="color: #0000BB">$tagstack</span><span style="color: #007700">, </span><span style="color: #0000BB">$tagname</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$score </span><span style="color: #007700">+= </span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #0000BB">$tagname</span><span style="color: #007700">];<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 5: Pushing a tag onto the tagstack and increasing the score.</em></p>
+<h3>Scoring words</h3>
+<p>The token loop then continues, carrying the updated $score and 
+$tagstack into the next iteration. The next item, in position #2 from 
+Figure 3, is the text <code>Taxonomy</code>. In the text handling portion of the token loop, the first thing that normally happens is the text is split using the function <a href="http://api.drupal.org/api/function/search_index_split/6">search_index_split</a>. search_index_split does a certain amount of processing on the text, which is covered in its <a href="#search_simplify">own section below</a>.
+ What is returned is an array of individual words. This array is 
+iterated over and the individual words are inserted into a further array
+ that tracks each unique word for the whole document as well as its 
+accumulated score. This array is the $results array.</p>
+<p>In addition to the word =&gt; score array that gets built for 
+$results, an accumulated list of all tokenized and processed words is 
+created and stored in the form of the $accum variable. This is used 
+later to build the search_dataset table.</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Add word to accumulator<br></span><span style="color: #0000BB">$accum </span><span style="color: #007700">.= </span><span style="color: #0000BB">$word </span><span style="color: #007700">. </span><span style="color: #DD0000">' '</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 6: Building the accumulated string of all a document's words.</em></p>
+<p>The scoring of a word within a document is very important to 
+obtaining relevant search results later. If multiple occurrences of a 
+word are found in a document, each will contribute to the total score 
+for that unique word within the document. How much they contribute is 
+dependent on a couple of factors, however. The first factor is of course
+ the tag within which the word is found. The second factor is the 
+absolute position of the word within the document also plays a role. The
+ lower in the document the word is found, the less it will increase 
+score. The amount that any individual word will add to the total score 
+can be expressed with this formula:</p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>$total </span><span style="color: #007700">= </span><span style="color: #0000BB">$score </span><span style="color: #007700">* </span><span style="color: #0000BB">$focus</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p>The $score is the value that was being incremented in Figure 5, and 
+$focus is a decimal value between 0 and 1 that is a calculation of the 
+word's position in the document. Here is how focus is calculated for 
+each word:</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Focus is a decaying value in terms of the amount of unique words up to this point.<br>// From 100 words and more, it decays, to e.g. 0.5 at 500 words and 0.3 at 1000 words.<br></span><span style="color: #0000BB">$focus </span><span style="color: #007700">= </span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">.01 </span><span style="color: #007700">+ </span><span style="color: #0000BB">3.5 </span><span style="color: #007700">/ (</span><span style="color: #0000BB">2 </span><span style="color: #007700">+ </span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$results</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]) * </span><span style="color: #0000BB">.015</span><span style="color: #007700">));<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 7: Calculating focus. Words start losing value after the 233rd word (despite what the code comments say).</em></p>
+<p>In Figures 7 through 10, the $results array is the array of unique 
+words from this document and their scores. With both $score and $focus 
+now determined, the word's score can be added to the total score for 
+this unique word within the document:</p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>$results</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #0000BB">$word</span><span style="color: #007700">] += </span><span style="color: #0000BB">$score </span><span style="color: #007700">* </span><span style="color: #0000BB">$focus</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 8: Accumulating the score for a word.</em></p>
+<p>Thus when the word <code>Taxonomy</code> from position 2 arrives here, the values in Figure 4 look like this:</p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>$results</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">'taxonomy'</span><span style="color: #007700">] += </span><span style="color: #0000BB">26 </span><span style="color: #007700">* </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 9: The title word "Taxonomy" gets a score of 26 and a focus of 1.</em></p>
+<p>"Taxonomy" was the title of this node, thus it was in &lt;h1&gt; 
+tags, and its score was therefore 26. At the beginning of the document 
+$focus is 1 and it remains 1 until the 233rd word, after which it 
+decreases, approaching zero as the number of words in the document 
+reaches infinity. Here is the same calculation for the word "ponies":</p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>$results</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">'ponies'</span><span style="color: #007700">] += </span><span style="color: #0000BB">1 </span><span style="color: #007700">* </span><span style="color: #0000BB">1</span><span style="color: #007700">;<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 10: The word "ponies" gets a score of 1.</em></p>
+<p>Note that if "ponies" had been lower in the document (the 233rd word 
+or more), the focus would have been a number less than 1 but greater 
+than zero.</p>
+<h3>Closing tags</h3>
+<p>After each of the words in this particular token have added their 
+scores to the accumulative total it is time for the next token, which is
+ by the nature of the token array, a tag. In fact it will be a closing 
+tag, as seen in postion #3 from Figure 3. The handling of closing tags 
+works pretty much the reverse of how opening tags were dealt with. The 
+tag is popped off from the tag stack and the score variable is reduced.</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Remove from tag stack and decrement score<br></span><span style="color: #0000BB">$score </span><span style="color: #007700">= </span><span style="color: #0000BB">max</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">$score </span><span style="color: #007700">- </span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #0000BB">array_shift</span><span style="color: #007700">(</span><span style="color: #0000BB">$tagstack</span><span style="color: #007700">)]);<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 11: When a closing tag is being handled the $score is reduced and the tag is removed from the stack.</em></p>
+<h3>Link handling</h3>
+<p>So far hyperlink handling in documents has been ignored, yet this is 
+an important part of building relevancy. When the search indexer finds a
+ hyperlink that references another node <em>on the same site</em> the words in the hyperlink will be added to the list of words that identify <em>the target node</em>. Stated differently, if node 1 has the link <code>&lt;a href="node/2"&gt;Green goo&lt;/a&gt;</code>,
+ the search terms "green" and "goo" will both find node/2. Link text 
+also counts towards the node in which it is found, albeit at an 80% 
+reduced focus value.</p>
+<p>To accomplish this, in the tag handling phase of the token loop, 
+anchor tags are spotted and receive extra handling. It is determined 
+whether the link references a node on the same site. The title, node id,
+ version id, and filter format are fetched from the database. If the 
+filter format is cacheable, the variable $link is set to TRUE to 
+indicate later that the text phase is dealing with an internal link, and
+ the variable $linktitle is set to contain the title of the target node.
+ </p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>&nbsp; </span><span style="color: #007700">if (</span><span style="color: #0000BB">$tagname </span><span style="color: #007700">== </span><span style="color: #DD0000">'a'</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Check if link points to a node on this site<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #007700">if (</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #0000BB">$node_regexp</span><span style="color: #007700">, </span><span style="color: #0000BB">$value</span><span style="color: #007700">, </span><span style="color: #0000BB">$match</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$path </span><span style="color: #007700">= </span><span style="color: #0000BB">drupal_get_normal_path</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">'!(?:node|book)/(?:view/)?([0-9]+)!i'</span><span style="color: #007700">, </span><span style="color: #0000BB">$path</span><span style="color: #007700">, </span><span style="color: #0000BB">$match</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$linknid </span><span style="color: #007700">= </span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">$linknid </span><span style="color: #007700">&gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Note: ignore links to uncachable nodes to avoid redirect bugs.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$node </span><span style="color: #007700">= </span><span style="color: #0000BB">db_fetch_object</span><span style="color: #007700">(</span><span style="color: #0000BB">db_query</span><span style="color: #007700">(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'SELECT n.title, n.nid, n.vid, r.format FROM {node} n <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ INNER JOIN {node_revisions} r ON n.vid = r.vid WHERE n.nid = %d'</span><span style="color: #007700">, </span><span style="color: #0000BB">$linknid</span><span style="color: #007700">));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">filter_format_allowcache</span><span style="color: #007700">(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$link </span><span style="color: #007700">= </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$linktitle </span><span style="color: #007700">= </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">title</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp; }<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 12: Link handling in the tag phase of the token loop.</em></p>
+<p>Then, in the text phase of the token loop, a regular expression is 
+run to see if the text within the link is the same as the the link's 
+URL. This is the case when using the URL filter, for example, so it 
+comes up pretty often. If the text <em>is</em> a URL, the $linktext 
+variable containing the referenced node's title replaces the text token 
+($value). This way there is still relevant text that can be ascribed to 
+the current document as well as the target.</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #007700">if (</span><span style="color: #0000BB">$link</span><span style="color: #007700">) {<br>&nbsp; </span><span style="color: #FF8000">// Check to see if the node link text is its URL. If so, we use the target node title instead.<br>&nbsp; </span><span style="color: #007700">if (</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">'!^https?://!i'</span><span style="color: #007700">, </span><span style="color: #0000BB">$value</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$value </span><span style="color: #007700">= </span><span style="color: #0000BB">$linktitle</span><span style="color: #007700">;<br>&nbsp; }<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 13: For link text that is a URL, grab the target node's title and use it as the token $value.</em></p>
+<p>Finaly, the $results array is extended to contain information about 
+link texts, keyed by the target node id. The $focus gets reduced by 80% 
+for the text as it applies to the current document, as explained in the 
+code comment that links score mainly for the target.</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Links score mainly for the target.<br></span><span style="color: #007700">if (</span><span style="color: #0000BB">$link</span><span style="color: #007700">) {<br>&nbsp; if (!isset(</span><span style="color: #0000BB">$results</span><span style="color: #007700">[</span><span style="color: #0000BB">$linknid</span><span style="color: #007700">])) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$results</span><span style="color: #007700">[</span><span style="color: #0000BB">$linknid</span><span style="color: #007700">] = array();<br>&nbsp; }<br>&nbsp; </span><span style="color: #0000BB">$results</span><span style="color: #007700">[</span><span style="color: #0000BB">$linknid</span><span style="color: #007700">][] = </span><span style="color: #0000BB">$word</span><span style="color: #007700">;<br>&nbsp; </span><span style="color: #FF8000">// Reduce score of the link caption in the source.<br>&nbsp; </span><span style="color: #0000BB">$focus </span><span style="color: #007700">*= </span><span style="color: #0000BB">0.2</span><span style="color: #007700">;<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 14: Link text words are collected for later storage in their own database table.</em></p>
+<p>That concludes the processing in the token loop. The entire document 
+has now been tokenized, analyzed, scored, and saved in the $results 
+array. Furthermore, the $accum variable now contains every word in the 
+document in a space delimited string. Using the information stored in 
+these two variables, the remainder of search_index is dedicated to 
+persisting the search data to the four search related database tables: 
+search_index, search_dataset, search_node_links, and search_total.</p>
+<h2>Storing the search data</h2>
+<p>First let's look at the four search related tables and discuss their roles in searching.</p>
+<h3>The search_index database table</h3>
+<p>The search_index table is the primary table used in searching. Here 
+is what it will contain after processing the tokens from Figure 3:</p>
+<div class="codeblock"><code>mysql&gt; select * from search_index;<br>+----------+-----+------+-------+<br>| word&nbsp;&nbsp;&nbsp;&nbsp; | sid | type | score |<br>+----------+-----+------+-------+<br>| new&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 2 | node |&nbsp;&nbsp;&nbsp;&nbsp; 1 | <br>| the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 2 | node |&nbsp;&nbsp;&nbsp;&nbsp; 1 | <br>| are&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 2 | node |&nbsp;&nbsp;&nbsp;&nbsp; 1 | <br>| badgers&nbsp; |&nbsp;&nbsp; 2 | node |&nbsp;&nbsp;&nbsp;&nbsp; 4 | <br>| taxonomy |&nbsp;&nbsp; 2 | node |&nbsp;&nbsp;&nbsp; 26 | <br>| ponies&nbsp;&nbsp; |&nbsp;&nbsp; 2 | node |&nbsp;&nbsp;&nbsp;&nbsp; 1 | <br>+----------+-----+------+-------+<br>6 rows in set (0.00 sec)</code></div>
+<p><em>Figure 15: The contents of the search_index table after processing the tokens in Figure 3.</em></p>
+<p>As you can see, "taxonomy" has a score of 26 and "ponies" has a score
+ of 1, as was explained above. Here is the code that gets those words 
+from the $results array into the search_index table:</p>
+<h4>search.module: search_index()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br>search_wipe</span><span style="color: #007700">(</span><span style="color: #0000BB">$sid</span><span style="color: #007700">, </span><span style="color: #0000BB">$type</span><span style="color: #007700">, </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">);
+<p></p></span><span style="color: #FF8000">// Insert results into search index<br></span><span style="color: #007700">foreach (</span><span style="color: #0000BB">$results</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">] as </span><span style="color: #0000BB">$word </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$score</span><span style="color: #007700">) {<br>&nbsp; </span><span style="color: #FF8000">// The database will collate similar words (accented and non-accented forms, etc.),<br>&nbsp; // and the score is additive, so first add and then insert.<br>&nbsp; </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"UPDATE {search_index} SET score = score + %d <br>&nbsp;&nbsp;&nbsp; WHERE word = '%s' AND sid = '%d' AND type = '%s'"</span><span style="color: #007700">, </span><span style="color: #0000BB">$score</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">, </span><span style="color: #0000BB">$sid</span><span style="color: #007700">, </span><span style="color: #0000BB">$type</span><span style="color: #007700">);<br>&nbsp; if (!</span><span style="color: #0000BB">db_affected_rows</span><span style="color: #007700">()) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT INTO {search_index} (word, sid, type, score) <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VALUES ('%s', %d, '%s', %f)"</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">, </span><span style="color: #0000BB">$sid</span><span style="color: #007700">, </span><span style="color: #0000BB">$type</span><span style="color: #007700">, </span><span style="color: #0000BB">$score</span><span style="color: #007700">);<br>&nbsp; }<br>&nbsp; </span><span style="color: #0000BB">search_dirty</span><span style="color: #007700">(</span><span style="color: #0000BB">$word</span><span style="color: #007700">);<br>}<br>unset(</span><span style="color: #0000BB">$results</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 16: Inserting words and scores into search_index.</em></p>
+<p>Noteworthy are the calls to <a href="http://api.drupal.org/api/function/search_wipe/6">search_wipe</a> and <a href="http://api.drupal.org/api/function/search_dirty/6">search_dirty</a>.
+ The search_wipe function is very straightforward; before starting to 
+insert lots of words and scores into the index for a document, 
+search_wipe gets rid of that document's previous data from the 
+search_index, search_datase, and search_node_links tables. </p>
+<p>The search_dirty call is more interesting. Part of the algorithm used
+ at search time calls for the global totals of words. These are stored 
+in the search_totals table, and the search_dirty function keeps track of
+ which words in the table are now out of date due to the most recent 
+document being indexed. Later, these words will be recalculated and the 
+search_total table updated.</p>
+<h3>The search_dataset table</h3>
+<p>Here's what is in the search_dataset table after indexing the tokens in Figure 3:</p>
+<div class="codeblock"><code>mysql&gt; select * from search_dataset;<br>+-----+------+----------------------------------------+---------+<br>|
+ sid | type | 
+data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ | reindex |<br>+-----+------+----------------------------------------+---------+<br>|&nbsp;&nbsp; 2 | node |&nbsp; taxonomy badgers are the new ponies&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 | <br>+-----+------+----------------------------------------+---------+</code></div>
+<p><em>Figure 17: The contents of the search_dataset table after processing the tokens in Figure 3.</em></p>
+<p>As you can see, the data column of search_dataset is all of the words
+ that were encountered in this document, in the order that they were 
+encountered. This string is used for executing phrase queries, but it 
+will take writing a different article on the search process to show how 
+that works!</p>
+<h3>The search_node_links table</h3>
+<p>The tokens in Figure 3 didn't contain any links. Here's some text 
+that links back to node 2 (the node that talks about ponies and 
+badgers):         </p>
+<p><code>&lt;a href="<a href="http://example.com/node/2%22%3ETalk">http://example.com/node/2"&gt;Talk</a> of badgers and ponies&lt;/a&gt;</code></p>
+<p>This is in node 3, and the link references node 2. Now look at the 
+contents of the search_node_links table after node 3 has been indexed:</p>
+<div class="codeblock"><code>mysql&gt; select * from search_node_links;<br>+-----+------+-----+-------------------------+<br>| sid | type | nid | caption&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>+-----+------+-----+-------------------------+<br>|&nbsp;&nbsp; 3 | node |&nbsp;&nbsp; 2 | talk badgers and ponies | <br>+-----+------+-----+-------------------------+</code></div>
+<p><em>Figure 18: search_node_links has "caption" text that will be added to a node's text at indexing time.</em></p>
+<p>The utility of this text only makes sense if we also look at the <a href="http://api.drupal.org/api/function/search_nodeapi/6">search_nodeapi</a> function:</p>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br> * Implementation of hook_nodeapi().<br> */<br></span><span style="color: #007700">function </span><span style="color: #0000BB">search_nodeapi</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$node</span><span style="color: #007700">, </span><span style="color: #0000BB">$op</span><span style="color: #007700">, </span><span style="color: #0000BB">$teaser </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">, </span><span style="color: #0000BB">$page </span><span style="color: #007700">= </span><span style="color: #0000BB">NULL</span><span style="color: #007700">) {<br>&nbsp; switch (</span><span style="color: #0000BB">$op</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Transplant links to a node into the target node.<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #007700">case </span><span style="color: #DD0000">'update index'</span><span style="color: #007700">:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT caption FROM {search_node_links} WHERE nid = %d"</span><span style="color: #007700">, </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">nid</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$links </span><span style="color: #007700">= array();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$output </span><span style="color: #007700">= </span><span style="color: #DD0000">''</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (</span><span style="color: #0000BB">$link </span><span style="color: #007700">= </span><span style="color: #0000BB">db_fetch_object</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$links</span><span style="color: #007700">[] = </span><span style="color: #0000BB">$link</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">caption</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$links</span><span style="color: #007700">) &gt; </span><span style="color: #0000BB">0</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$output </span><span style="color: #007700">= </span><span style="color: #DD0000">'&lt;a&gt;(' </span><span style="color: #007700">. </span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">', '</span><span style="color: #007700">, </span><span style="color: #0000BB">$output</span><span style="color: #007700">) . </span><span style="color: #DD0000">')&lt;/a&gt;'</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return </span><span style="color: #0000BB">$output</span><span style="color: #007700">;<br>&nbsp; }<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 19: The search_nodeapi function takes care that the text 
+from referencing links gets added to a node's text at indexing time.</em></p>
+<p>Here you can see that before a node gets indexed, it's text is 
+extended with all of the link text from nodes that reference it. The 
+referring link texts get wrapped in &lt;a&gt; tags to boost the score of
+ the words appropriately.</p>
+<h3>The search_total table</h3>
+<p>Take a look at what the search_total table contains after indexing example nodes 2 and 3:</p>
+<div class="codeblock"><code>mysql&gt; select * from search_total order by count desc;<br>+----------+-----------+<br>| word&nbsp;&nbsp;&nbsp;&nbsp; | count&nbsp;&nbsp;&nbsp;&nbsp; |<br>+----------+-----------+<br>| are&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 0.30103 | <br>| the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 0.30103 | <br>| new&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 0.30103 | <br>| and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; 0.162727 | <br>| talk&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; 0.162727 | <br>| ponies&nbsp;&nbsp; |&nbsp; 0.118099 | <br>| badgers&nbsp; | 0.0649408 | <br>| testing&nbsp; | 0.0163904 | <br>| links&nbsp;&nbsp;&nbsp; | 0.0163904 | <br>| taxonomy | 0.0163904 | <br>+----------+-----------+</code></div>
+<p><em>Figure 20: Global normalized totals for the words in the index.</em></p>
+<p>After each time that indexing occurs, all of the words that have been
+ marked by search_dirty will be updated in the search_total table. The <code>count</code> value is a normalization according to <a href="http://en.wikipedia.org/wiki/Zipf%27s_law">Zipf's law</a> that says a word's value to the search index is inversely proportionate to its overall frequency therein. Here is the <code>count</code> calculation expressed in code:</p>
+<h4>search.module: search_update_totals()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">// Get total count<br></span><span style="color: #0000BB">$total </span><span style="color: #007700">= </span><span style="color: #0000BB">db_result</span><span style="color: #007700">(</span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT SUM(score) FROM {search_index} WHERE word = '%s'"</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">));<br></span><span style="color: #FF8000">// Apply Zipf's law to equalize the probability distribution<br></span><span style="color: #0000BB">$total </span><span style="color: #007700">= </span><span style="color: #0000BB">log10</span><span style="color: #007700">(</span><span style="color: #0000BB">1 </span><span style="color: #007700">+ </span><span style="color: #0000BB">1</span><span style="color: #007700">/(</span><span style="color: #0000BB">max</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">$total</span><span style="color: #007700">)));<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 21: Normalizing word counts according to Zipf's law.</em></p>
+<p>Note that more frequent words will have a <em>higher</em> <code>count</code> value, thus making them <em>less</em>
+ valuable in the index. Normally words like "and", "the", and "are" will
+ naturally have very high values due to their high frequency in the 
+English language, whereas on most websites, words like "badgers" and 
+"ponies" would have low counts. This limited sample gets things a bit 
+backwards because of the author's obsession with ponies and badgers ;-)</p>
+<p><a name="search_simplify" id="search_simplify"></a></p>
+<h2>Word level processing</h2>
+<p>It's not easy for a word to get into the search index unscathed. 
+There are several imposed limitations and transformations that can 
+happen to an unsuspecting word, and these all lurk in the benign 
+sounding <a href="http://api.drupal.org/api/function/search_simplify/6">search_simplify</a> function. To keep things in context, search_simplify gets called from <a href="http://api.drupal.org/api/function/search_index_split/6">search_index_split</a>, which in turn gets called in during the text token phase of search_index (it's a bit like playing mental twister, isn't it?)</p>
+<p>Let's look at the whole search_simplify function:</p>
+<h4>search.module: search_simplify()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br> * Simplifies a string according to indexing rules.<br> */<br></span><span style="color: #007700">function </span><span style="color: #0000BB">search_simplify</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">) {<br>&nbsp; </span><span style="color: #FF8000">// Decode entities to UTF-8<br>&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #0000BB">decode_entities</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">);
+<p>&nbsp; </p></span><span style="color: #FF8000">// Lowercase<br>&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #0000BB">drupal_strtolower</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">);
+<p>&nbsp; </p></span><span style="color: #FF8000">// Call an external processor for word handling.<br>&nbsp; </span><span style="color: #0000BB">search_invoke_preprocess</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">);
+<p>&nbsp; </p></span><span style="color: #FF8000">// Simple CJK handling<br>&nbsp; </span><span style="color: #007700">if (</span><span style="color: #0000BB">variable_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'overlap_cjk'</span><span style="color: #007700">, </span><span style="color: #0000BB">TRUE</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(</span><span style="color: #DD0000">'/[' </span><span style="color: #007700">. </span><span style="color: #0000BB">PREG_CLASS_CJK </span><span style="color: #007700">. </span><span style="color: #DD0000">']+/u'</span><span style="color: #007700">, </span><span style="color: #DD0000">'search_expand_cjk'</span><span style="color: #007700">, </span><span style="color: #0000BB">$text</span><span style="color: #007700">);<br>&nbsp; }
+<p>&nbsp; </p></span><span style="color: #FF8000">// To improve searching for numerical data such as dates, IP addresses<br>&nbsp; // or version numbers, we consider a group of numerical characters<br>&nbsp; // separated only by punctuation characters to be one piece.<br>&nbsp; // This also means that searching for e.g. '20/03/1984' also returns<br>&nbsp; // results with '20-03-1984' in them.<br>&nbsp; // Readable regexp: ([number]+)[punctuation]+(?=[number])<br>&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'/([' </span><span style="color: #007700">. </span><span style="color: #0000BB">PREG_CLASS_NUMBERS </span><span style="color: #007700">. </span><span style="color: #DD0000">']+)[' </span><span style="color: #007700">. </span><span style="color: #0000BB">PREG_CLASS_PUNCTUATION </span><span style="color: #007700">. </span><span style="color: #DD0000">']+(?=[' </span><span style="color: #007700">. </span><span style="color: #0000BB">PREG_CLASS_NUMBERS </span><span style="color: #007700">. </span><span style="color: #DD0000">'])/u'</span><span style="color: #007700">, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #DD0000">'\1'</span><span style="color: #007700">, </span><span style="color: #0000BB">$text</span><span style="color: #007700">);
+<p>&nbsp; </p></span><span style="color: #FF8000">// The dot, underscore and dash are simply removed. This allows meaningful<br>&nbsp; // search behavior with acronyms and URLs.<br>&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'/[._-]+/'</span><span style="color: #007700">, </span><span style="color: #DD0000">''</span><span style="color: #007700">, </span><span style="color: #0000BB">$text</span><span style="color: #007700">);
+<p>&nbsp; </p></span><span style="color: #FF8000">// With the exception of the rules above, we consider all punctuation,<br>&nbsp; // marks, spacers, etc, to be a word boundary.<br>&nbsp; </span><span style="color: #0000BB">$text </span><span style="color: #007700">= </span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'/[' </span><span style="color: #007700">. </span><span style="color: #0000BB">PREG_CLASS_SEARCH_EXCLUDE </span><span style="color: #007700">. </span><span style="color: #DD0000">']+/u'</span><span style="color: #007700">, </span><span style="color: #DD0000">' '</span><span style="color: #007700">, </span><span style="color: #0000BB">$text</span><span style="color: #007700">);
+<p>&nbsp; return </p></span><span style="color: #0000BB">$text</span><span style="color: #007700">;<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 22: The search_simplify function transforms text to the norms of the search index.</em></p>
+<p>When a string of text comes into search_simplify, three things happen
+ right away: it's entities are decoded, it is put into lowercase, and it
+ is subjected to the whims of <a href="http://api.drupal.org/api/function/hook_search_preprocess/6">hook_search_preprocess</a>.
+ This hook allows any module to make a transformation on the text in a 
+way intended to improve its utility in searching. The best example of a 
+module that uses hook_search_preprocess is the <a href="http://drupal.org/project/porterstemmer">Porter Stemmer module</a> which applies stemming rules to the text. </p>
+<p>The next transformation, Simple CJK handling, applies only to asian 
+languages whose character based alphabets require special tokenizing.</p>
+<p>The next three transformations attempt to bring structure to the vast
+ diversity of numerical data and punctuation that might come into the 
+indexer. It would be nice if searching for dates would work as expected,
+ as well as acronyms (P.E.T.A and PETA should return the same results). 
+This has its share of side effects as well as benefits. For example, the
+ word "low-budget" will get indexed as word "lowbudget" so neither "low"
+ nor "budget" will return results. A possible solution to this problem 
+would be to remove the hyphen <em>and</em> add "low" and "budget" separately.</p>
+<p>After all these transformations, the text is sent back to search_index for the rest of the indexing process.</p>
+<h2>Updating the totals</h2>
+<p>The last thing that happens in indexing is the updating of the 
+search_total table. As explained previously, a word is considered more 
+valuable (lower count score) the rarer it is in the index. The following
+ code first selects the sum total of every word that has been added to 
+search_dirty during indexing. It then calculates the <a href="http://en.wikipedia.org/wiki/Tf-idf">inverse document frequency</a>
+ of the word (IDF) and updates the search_total table. Sometimes words 
+have been deleted during indexing (via search_wipe), and housecleaning 
+dictates these be removed from search_total as well.</p>
+<h4>search.module: search_update_totals()</h4>
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br></span><span style="color: #FF8000">/**<br> * This function is called on shutdown to ensure that search_total is always<br> * up to date (even if cron times out or otherwise fails).<br> */<br></span><span style="color: #007700">function </span><span style="color: #0000BB">search_update_totals</span><span style="color: #007700">() {<br>&nbsp; </span><span style="color: #FF8000">// Update word IDF (Inverse Document Frequency) counts for new/changed words<br>&nbsp; </span><span style="color: #007700">foreach (</span><span style="color: #0000BB">search_dirty</span><span style="color: #007700">() as </span><span style="color: #0000BB">$word </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$dummy</span><span style="color: #007700">) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Get total count<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$total </span><span style="color: #007700">= </span><span style="color: #0000BB">db_result</span><span style="color: #007700">(</span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT SUM(score) FROM {search_index} WHERE word = '%s'"</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">));<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #FF8000">// Apply Zipf's law to equalize the probability distribution<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">$total </span><span style="color: #007700">= </span><span style="color: #0000BB">log10</span><span style="color: #007700">(</span><span style="color: #0000BB">1 </span><span style="color: #007700">+ </span><span style="color: #0000BB">1</span><span style="color: #007700">/(</span><span style="color: #0000BB">max</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">$total</span><span style="color: #007700">)));<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"UPDATE {search_total} SET count = %f WHERE word = '%s'"</span><span style="color: #007700">, </span><span style="color: #0000BB">$total</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; if (!</span><span style="color: #0000BB">db_affected_rows</span><span style="color: #007700">()) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT INTO {search_total} (word, count) VALUES ('%s', %f)"</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">, </span><span style="color: #0000BB">$total</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp; }<br>&nbsp; </span><span style="color: #FF8000">// Find words that were deleted from search_index, but are still in<br>&nbsp; // search_total. We use a LEFT JOIN between the two tables and keep only the<br>&nbsp; // rows which fail to join.<br>&nbsp; </span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT t.word AS realword, i.word FROM {search_total} t <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ LEFT JOIN {search_index} i ON t.word = i.word WHERE i.word IS NULL"</span><span style="color: #007700">);<br>&nbsp; while (</span><span style="color: #0000BB">$word </span><span style="color: #007700">= </span><span style="color: #0000BB">db_fetch_object</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)) {<br>&nbsp;&nbsp;&nbsp; </span><span style="color: #0000BB">db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"DELETE FROM {search_total} WHERE word = '%s'"</span><span style="color: #007700">, </span><span style="color: #0000BB">$word</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">realword</span><span style="color: #007700">);<br>&nbsp; }<br>}<br></span><span style="color: #0000BB">?&gt;</span></span></code></div>
+<p><em>Figure 23: Updating the search totals to reflect the inverse document frequency value of each word in the index.</em></p>
+<h2>Conclusion</h2>
+<p>Drupal's text indexing has a lot to it. The complexity of the code 
+makes it a somewhat formidable subject of study, but understanding how 
+it all works is a sure way to build appreciation for the Drupal search 
+framework. This article steps through the indexing process from 
+beginning to end and serves as a guide to your further study.</p>
+</div></div></div><div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above"><div class="field-label">Tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="http://www.acquia.com/tags/drupal-6" typeof="skos:Concept" property="rdfs:label skos:prefLabel" class="first">Drupal 6</a></div><div class="field-item odd"><a href="http://www.acquia.com/tags/acquia-drupal-planet" typeof="skos:Concept" property="rdfs:label skos:prefLabel">acquia drupal planet</a></div><div class="field-item even"><a href="http://www.acquia.com/tags/article" typeof="skos:Concept" property="rdfs:label skos:prefLabel">article</a></div><div class="field-item odd"><a href="http://www.acquia.com/tags/drupal-planet" typeof="skos:Concept" property="rdfs:label skos:prefLabel">drupal planet</a></div><div class="field-item even"><a href="http://www.acquia.com/tags/drupal-planet-0" typeof="skos:Concept" property="rdfs:label skos:prefLabel">drupal planet</a></div><div class="field-item odd"><a href="http://www.acquia.com/tags/indexing" typeof="skos:Concept" property="rdfs:label skos:prefLabel">indexing</a></div><div class="field-item even"><a href="http://www.acquia.com/tags/search-sprint" typeof="skos:Concept" property="rdfs:label skos:prefLabel">search sprint</a></div><div class="field-item odd"><a href="http://www.acquia.com/tags/text-retrieval" typeof="skos:Concept" property="rdfs:label skos:prefLabel">text retrieval</a></div></div></div>    </div>
+    </div>     </div>
+  <div class="clearfix" style="padding: 10px;"></div>
+  <div id="comments" class="comment-wrapper">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-946"></a>
+<div about="/comment/946#comment-946" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/946#comment-946" class="permalink" rel="bookmark">Awesome, Thanks :-) I feel</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-09T09:02:46-04:00"><span property="dc:date dc:created" content="2008-05-09T09:02:46-04:00" datatype="xsd:dateTime">Fri, 2008-05-09 09:02</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">Josiah (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Awesome, Thanks :-) I feel like I just read a chapter in a really
+good drupal book.</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-951"></a>
+<div about="/comment/951#comment-951" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/951#comment-951" class="permalink" rel="bookmark">Wow. This has to be the</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-09T11:17:04-04:00"><span property="dc:date dc:created" content="2008-05-09T11:17:04-04:00" datatype="xsd:dateTime">Fri, 2008-05-09 11:17</span></time> by <span rel="sioc:has_creator"><a href="http://drupal.org/moshe" rel="nofollow foaf:page" class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">Moshe Weitzman (not verified)</a></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Wow. This has to be the authoritative document on indexing. Very
+well done.</p>
+<p>A doc like this generates as many questions as answers. What is the
+search query like for a single word? For a phrase? Also, it would be
+nice to do a unified such query that includes users/profiles and other
+non node data.</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-956"></a>
+<div about="/comment/956#comment-956" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/956#comment-956" class="permalink" rel="bookmark">Thank you so much for the</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-09T11:29:55-04:00"><span property="dc:date dc:created" content="2008-05-09T11:29:55-04:00" datatype="xsd:dateTime">Fri, 2008-05-09 11:29</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">Jim (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you so much for the writeup.<br>
+I didn't know there is a $node-&gt;build_mode , very interesting. Can
+it be used to control which part of the node text be indexed, e.g.
+only title and teaser text?</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+
+<div class="indented"><a id="comment-4391"></a>
+<div about="/comment/4391#comment-4391" typeof="sioc:Post sioct:Comment" class="comment comment-by-node-author clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/4391#comment-4391" class="permalink" rel="bookmark">Theoretically, yes. There is</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-09T12:49:31-04:00"><span property="dc:date dc:created" content="2008-05-09T12:49:31-04:00" datatype="xsd:dateTime">Fri, 2008-05-09 12:49</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" about="/users/robert-douglass" typeof="sioc:UserAccount" property="foaf:name">Robert Douglass</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/956#comment-956" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Theoretically, yes. There is no such provision in core at this
+time.</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+</div><a id="comment-961"></a>
+<div about="/comment/961#comment-961" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/961#comment-961" class="permalink" rel="bookmark">Stunning!
+While reading, the</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-13T17:33:41-04:00"><span property="dc:date dc:created" content="2008-05-13T17:33:41-04:00" datatype="xsd:dateTime">Tue, 2008-05-13 17:33</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">sun (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Stunning!</p>
+<p>While reading, the question arose whether the search index could be
+"abused" to perform 404 link checking on a Drupal site (internal
+links), and, to develop a keyword density checker for SEO.</p>
+<p>PS: It would be great if you guys could install <a href="http://drupal.org/project/commentmail">Comment Mail</a>, so I
+would be informed if someone replied to my comments.</p>
+<p>Daniel F. Kudwien<br><a href="http://www.unleashedmind.com/">unleashed mind</a></p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-966"></a>
+<div about="/comment/966#comment-966" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/966#comment-966" class="permalink" rel="bookmark">Thank you for your article!</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-21T13:20:34-04:00"><span property="dc:date dc:created" content="2008-05-21T13:20:34-04:00" datatype="xsd:dateTime">Wed, 2008-05-21 13:20</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">Lem (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you for your article! I am new to Drupal and still hacking
+php. I have content that is pulling from a database using php. Will
+drupal index that database. For example, a page has a list (from the
+database) of nonprofits and the funds they recieve. A user would be
+interested in searching the site for a specific nonprofit.</p>
+<p>I am not sure if I am missing an add-on script or module, but it is
+not showing up in a search. Test site: <a href="http://lynchburgtrust.traxtech.net/?q=node/17">http://lynchburgt
+rust.traxtech.net/?q=node/17</a></p>
+<p>Thanks in advance</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+
+<div class="indented"><a id="comment-4396"></a>
+<div about="/comment/4396#comment-4396" typeof="sioc:Post sioct:Comment" class="comment comment-by-node-author clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/4396#comment-4396" class="permalink" rel="bookmark">Drupal indexes node-based</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-22T03:54:53-04:00"><span property="dc:date dc:created" content="2008-05-22T03:54:53-04:00" datatype="xsd:dateTime">Thu, 2008-05-22 03:54</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" about="/users/robert-douglass" typeof="sioc:UserAccount" property="foaf:name">Robert Douglass</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/966#comment-966" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Drupal indexes node-based content by default. If your content isn't
+inside of a node, it won't get indexed. You can use the indexer to
+create your own index and search, however, and this is described very
+well in <a href="http://www.drupalbook.com/">Pro Drupal
+Development</a>, which I highly recommend. If your goal is to have the
+stuff in your other database show up as part of the normal
+q=search/node search, then you need to find a way to import it into
+nodes. One way would be to have a node type that loads and renders the
+content from the external database (a proxy node, so to speak). Then
+you'd just need your module to implement the 'update index' $op of
+hook_nodeapi.</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-4401"></a>
+<div about="/comment/4401#comment-4401" typeof="sioc:Post sioct:Comment" class="comment comment-by-node-author clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/4401#comment-4401" class="permalink" rel="bookmark">I now see that you have a</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-22T03:57:29-04:00"><span property="dc:date dc:created" content="2008-05-22T03:57:29-04:00" datatype="xsd:dateTime">Thu, 2008-05-22 03:57</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" about="/users/robert-douglass" typeof="sioc:UserAccount" property="foaf:name">Robert Douglass</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/966#comment-966" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>I now see that you have a proxy-node solution in place. Make sure
+you're implementing 'update index' in your module's nodeapi hook.</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+
+<div class="indented"><a id="comment-4406"></a>
+<div about="/comment/4406#comment-4406" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/4406#comment-4406" class="permalink" rel="bookmark">Thank you very much. I</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-05-22T08:41:37-04:00"><span property="dc:date dc:created" content="2008-05-22T08:41:37-04:00" datatype="xsd:dateTime">Thu, 2008-05-22 08:41</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">Lem (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/4401#comment-4401" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you very much. I understand about half of what you said, but
+at least I know what direction to go and that's a major step. I'll
+check out the link and order the book. Thanks again!</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+</div></div><a id="comment-971"></a>
+<div about="/comment/971#comment-971" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/971#comment-971" class="permalink" rel="bookmark">I have a question about:
+The</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-07-09T11:25:03-04:00"><span property="dc:date dc:created" content="2008-07-09T11:25:03-04:00" datatype="xsd:dateTime">Wed, 2008-07-09 11:25</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">AAndrew (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>I have a question about:</p>
+<blockquote><p>The node_update_index function first finds out what
+node ids are new, have been updated, or have new
+comments.</p></blockquote>
+<p>I have been using the "update index" case in hook_nodeapi to index
+related/child nodes.</p>
+<p>The problem is that when one of the related/child nodes is updated,
+Drupal doesn't know to reindex that parent node.</p>
+<p>What is the correct way to flag a node to be reindexed.  My
+assumption is that I just need to set the reindex column in the
+search_dataset table to the current timestamp for the parent node when
+a child node is added or updated.</p>
+<p>Thanks for the great article and everything you are doing to
+improve Drupal search!</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-976"></a>
+<div about="/comment/976#comment-976" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/976#comment-976" class="permalink" rel="bookmark">Thanks.. this solved the</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-07-15T03:12:11-04:00"><span property="dc:date dc:created" content="2008-07-15T03:12:11-04:00" datatype="xsd:dateTime">Tue, 2008-07-15 03:12</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">cynthia (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thanks.. this solved the problem</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-981"></a>
+<div about="/comment/981#comment-981" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/981#comment-981" class="permalink" rel="bookmark">I hope this may help</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2008-07-15T03:16:31-04:00"><span property="dc:date dc:created" content="2008-07-15T03:16:31-04:00" datatype="xsd:dateTime">Tue, 2008-07-15 03:16</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">cynthia (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>I hope this may help someone.. for search indexing problem</p>
+<p>/**<br>
+* Implementation of hook_nodeapi().<br>
+*/<br>
+function search_nodeapi(&amp;$node, $op, $teaser = NULL, $page = NULL)
+{<br>
+  switch ($op) {<br>
+    // Transplant links to a node into the target node.<br>
+    case 'update index':<br>
+      $result = db_query("SELECT keywords FROM {answers} WHERE nid =
+%d", $node-&gt;nid);<br>
+      while ($link = db_fetch_object($result)) {<br>
+        $links = $link-&gt;keywords;<br>
+		     // Update index<br>
+  	  search_index($node-&gt;nid,'qbiz_Answer',' '.$links.' ');<br>
+      }<br>
+  }<br>
+}</p>
+<p>give this coding in search.module</p>
+<p>and run cron.php </p>
+<p>search works fine..</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+<a id="comment-986"></a>
+<div about="/comment/986#comment-986" typeof="sioc:Post sioct:Comment" class="comment comment-by-anonymous clearfix">
+
+  
+  <div>
+              <h3 property="dc:title" datatype=""><a href="http://www.acquia.com/comment/986#comment-986" class="permalink" rel="bookmark">I have a problem where the</a></h3>
+              </div>
+
+  
+  <div>
+   Posted on <time datetime="2009-03-31T03:58:20-04:00"><span property="dc:date dc:created" content="2009-03-31T03:58:20-04:00" datatype="xsd:dateTime">Tue, 2009-03-31 03:58</span></time> by <span rel="sioc:has_creator"><span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name">netsensei (not verified)</span></span>.  </div>
+
+  <div class="main-comment-wrapper">
+    <div>
+      <span rel="sioc:reply_of" resource="/blog/drupal-search-how-indexing-works" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>I have a problem where the indexer won't index CCK fields on nodes
+on occasion (Drupal 6.9 / CCK 2.2) I skimmed through the code and got
+a better grip thanks to this article. Great work!</p>
+<p>I have a question regarding this line:</p>
+<p>"This is followed by passing the built node along to any module
+that implements the 'update index' operation of hook_nodapi. This is
+an important moment in the process because modules like comment and
+taxonomy use the opportunity to add things (such as comments, cck
+fields, and taxonomy terms) to the text that will get indexed for this
+node."</p>
+<p>Maybe I'm wrong (these are my first ventures into Drupal code) but
+CCK doesn't add field data to  $node-&gt;content in 'update index' on
+nodeapi. This is done in the 'view' op of hook_nodeapi. Moreover, the
+update index op isn't even implemented in CCK and when it's called, it
+just being ignored by CCK.</p>
+<p>Nonetheless, the result should be the same: CCK fields and extra
+data are hooked on $node-&gt;content and the data gets indexed.</p>
+</div></div></div>    </div>
+
+    
+                <div class="links clearfix"></div>
+      </div>
+
+</div>
+
+  </div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+  </div>
+</div>  <div style="min-height: 16805px;" id="region-content-3-3" class="region region-content-3-3 grid-4 type reverse sidebar">
+    <div id="block-views-quotes-block-1" class="block block-views  block-quotes-block-1 block-views-quotes-block-1 first odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-quotes view-id-quotes view-display-id-block_1 view-dom-id-af22fb943774e0ab6dec00e26bd5e0ef">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last clearfix">
+    
+  <div class="views-field views-field-title">        <span class="field-content">Having
+ Acquia Commons at your disposal from day one allows you to support a 
+community participation strategy that is integrated with how the site 
+works.<span class="quote-arrow"></span></span>  </div>  
+  <div class="views-field views-field-entity-id-1">        <div class="field-content"><span class="quote-speaker-name"></span>
+    <span class="quote-speaker-org">Forum One</span></div>  </div>  </div>
+
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div>
+<div id="block-boxes-30day-free-trial" class="block block-boxes light block-30day-free-trial block-boxes-30day-free-trial even">
+  <div class="inner clearfix">
+              <h2 class="block-title">Free 30-day trial of Acquia Network</h2>
+            
+    <div class="content clearfix">
+      <div id="boxes-box-30day_free_trial" class="boxes-box"><div class="boxes-box-content"><p>A comprehensive suite of tools to help you create and manage killer web sites, including Acquia Insight.</p>
+<p><a href="http://network.acquia.com/node/129550" style="font-size: 16px; margin: 0pt;" class="gradient-button">Get started</a></p>
+</div></div>    </div>
+  </div>
+</div>
+<div id="block-block-116" class="block block-block  block-116 block-block-116 odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <h2 class="block-title">Drupal Community Events</h2>
+<p><a href="http://g.co/maps/efr5b" title="Acquia Sponsored Drupal Community Events" target="_blank" onclick="_gaq.push(['_trackEvent', 'Map', 'View', 'Drupal Community Events']);"><img src="drupal-search-how-indexing-works_files/drupal-community-events.png" alt="Acquia Sponsored Drupal Community Events" class="no-float" width="190"></a></p>
+    </div>
+  </div>
+</div>
+<div id="block-block-56" class="block block-block  block-56 block-block-56 even block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <h2 class="block-title">Watch and learn</h2>
+<p><a href="http://www.youtube.com/v/85xxX2EJY-c?version=3&amp;hl=en_US&amp;rel=0" rel="lightframe[|]" title="Drupal: An Open Source Community" target="_blank"><img src="drupal-search-how-indexing-works_files/community-video.png" alt="Watch - Drupal: An Open Source Community" border="0" width="180"><br><br>
+Drupal: An Open Source Community</a></p>
+    </div>
+  </div>
+</div>
+<div id="block-views-resources-blog-block-6" class="block block-views  block-resources-blog-block-6 block-views-resources-blog-block-6 last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title">Related content:</h2>
+            
+    <div class="content clearfix">
+      <div class="view view-resources-blog view-id-resources_blog view-display-id-block_6 view-dom-id-f9b617510a71856629df37ac50b3a48c">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first clearfix">
+  <div>
+<div class="left image">
+  <div><a href="http://www.acquia.com/blog/keeping-drupal-secure"><img typeof="foaf:Image" src="drupal-search-how-indexing-works_files/picture-2485-1328686169.jpg" alt="jam's picture" title="jam's picture" height="46" width="46"></a></div></div>
+<div class="right image">
+  <span class="field-content"><a href="http://www.acquia.com/blog/keeping-drupal-secure" title="Keeping Drupal Secure - How the world's largest op...">
+  Drupal is a huge software project by any measure, w...</a></span></div>
+<div class="clear"></div>
+</div>  </div>
+  <div class="views-row views-row-2 views-row-even clearfix">
+  <div>
+<div class="left image">
+  <div><a href="http://www.acquia.com/blog/acquia-cloud-has-made-me-lazy-and-i-it"><img typeof="foaf:Image" src="drupal-search-how-indexing-works_files/picture-38044-1329943314.png" alt="mcooper's picture" title="mcooper's picture" height="46" width="46"></a></div></div>
+<div class="right image">
+  <span class="field-content"><a href="http://www.acquia.com/blog/acquia-cloud-has-made-me-lazy-and-i-it" title="Acquia Cloud has made me lazy… and I like it.">Over the last few weeks I’ve been involved in setting u...</a></span></div>
+<div class="clear"></div>
+</div>  </div>
+  <div class="views-row views-row-3 views-row-odd clearfix">
+  <div>
+<div class="left image">
+  <div><a href="http://www.acquia.com/blog/how-can-acquia-help-you-grow-drupal-europe"><img typeof="foaf:Image" src="drupal-search-how-indexing-works_files/picture-2485-1328686169.jpg" alt="jam's picture" title="jam's picture" height="46" width="46"></a></div></div>
+<div class="right image">
+  <span class="field-content"><a href="http://www.acquia.com/blog/how-can-acquia-help-you-grow-drupal-europe" title="How can Acquia help you grow Drupal in Europe?">
+  Dries Buytaert, co-founder/CTO of Acquia was interv...</a></span></div>
+<div class="clear"></div>
+</div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last clearfix">
+  <div>
+<div class="left image">
+  <div><a href="http://www.acquia.com/blog/drupal-commons-25-released-ux-improvements-along-question-answers"><img typeof="foaf:Image" src="drupal-search-how-indexing-works_files/picture-54401-1329341380.jpg" alt="mobrien's picture" title="mobrien's picture" height="46" width="46"></a></div></div>
+<div class="right image">
+  <span class="field-content"><a href="http://www.acquia.com/blog/drupal-commons-25-released-ux-improvements-along-question-answers" title="Drupal Commons 2.5 released:  U/X improvements along wi...">The Commons team has released Commons 2.5 today.  This...</a></span></div>
+<div class="clear"></div>
+</div>  </div>
+
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div></div>    
+  
+      <div id="section-footer" class="section section-footer">
+  <div id="zone-footer-2-wrapper" class="zone-wrapper zone-static-wrapper zone-footer-2-wrapper clearfix">  
+  <div id="zone-footer-2" class="zone zone-footer-2 zone-static container-12 clearfix reverse">
+      <div id="region-footer-2-1" class="region region-footer-2-1 grid-2">
+    <div id="block-menu-block-11" class="block block-menu-block  block-11 block-menu-block-11 first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title">What we offer</h2>
+            
+    <div class="content clearfix">
+      <div class="menu-block-wrapper menu-block-11 menu-name-main-menu parent-mlid-2980 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-714 contains-link"><a href="http://www.acquia.com/products-services/acquia-network">Support &amp; cloud services</a></li>
+<li class="leaf menu-mlid-1081 contains-link"><a href="http://www.acquia.com/products-services/acquia-commons-social-business-software">Social business software</a></li>
+<li class="leaf menu-mlid-715 contains-link"><a href="http://www.acquia.com/products-services/acquia-managed-cloud">Enterprise cloud hosting</a></li>
+<li class="leaf menu-mlid-1332 contains-link"><a href="http://www.acquia.com/products-services/acquia-dev-cloud">Dev cloud hosting</a></li>
+<li class="leaf menu-mlid-1336 contains-link"><a href="http://www.acquia.com/products-services/drupal-gardens">Drupal Gardens</a></li>
+<li class="leaf menu-mlid-719 contains-link"><a href="http://www.acquia.com/products-services/acquia-professional-services">Professional Services</a></li>
+<li class="leaf menu-mlid-1338 contains-link"><a href="http://www.acquia.com/products-services/remote-administration">Remote Administration</a></li>
+<li class="leaf menu-mlid-1337 contains-link"><a href="http://www.acquia.com/products-services/drupal-training">Drupal Training</a></li>
+<li class="leaf menu-mlid-4086 contains-link"><a href="http://www.acquia.com/drupal-solutions/conference-organizing-distribution" title="Conference Organizing Distribution (COD)">Conference Organizing</a></li>
+<li class="leaf menu-mlid-1531 contains-link"><a href="http://www.acquia.com/drupal-solutions/publishing">Publishing solutions</a></li>
+<li class="leaf menu-mlid-1581 contains-link"><a href="http://www.acquia.com/drupal-solutions/government">Government solutions</a></li>
+<li class="leaf menu-mlid-3024 contains-link"><a href="http://www.acquia.com/drupal-solutions/education">Education solutions</a></li>
+<li class="last leaf menu-mlid-4521 contains-link"><a href="http://www.acquia.com/trial" title="Free 30-Day Trial Acquia Network">Free 30-Day Trial</a></li>
+</ul></div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-2-2" class="region region-footer-2-2 grid-2">
+    <div id="block-menu-block-2" class="block block-menu-block  block-2 block-menu-block-2 first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title"><a href="http://www.acquia.com/resources">Resources</a></h2>
+            
+    <div class="content clearfix">
+      <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-3009 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-3013 contains-link"><a href="http://www.acquia.com/blog">Blog</a></li>
+<li class="leaf menu-mlid-3012 contains-link"><a href="http://www.acquia.com/customers">Customers</a></li>
+<li class="leaf menu-mlid-3019 contains-link"><a href="http://www.acquia.com/resources/tv">Acquia TV</a></li>
+<li class="leaf menu-mlid-3020 contains-link"><a href="http://www.acquia.com/resources/podcasts">Podcasts</a></li>
+<li class="leaf menu-mlid-3021 contains-link"><a href="http://www.acquia.com/resources/webinars">Webinars</a></li>
+<li class="leaf menu-mlid-3022 contains-link"><a href="http://www.acquia.com/resources/recorded_webinars">Recorded webinars</a></li>
+<li class="leaf menu-mlid-6171 contains-link"><a href="http://www.acquia.com/resources/ebooks">eBooks</a></li>
+<li class="leaf menu-mlid-3016 contains-link"><a href="http://www.acquia.com/resources/whitepapers">White papers</a></li>
+<li class="leaf menu-mlid-3023 contains-link"><a href="http://www.acquia.com/community/resources/events">Events</a></li>
+<li class="leaf menu-mlid-3341 contains-link"><a href="http://www.acquia.com/resources/casestudies">Case Studies</a></li>
+<li class="leaf menu-mlid-3371 contains-link"><a href="http://network.acquia.com/documentation" target="_blank">Product documentation</a></li>
+<li class="last leaf menu-mlid-3441 contains-link"><a href="http://www.acquia.com/what-is-drupal">What is Drupal?</a></li>
+</ul></div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-2-3" class="region region-footer-2-3 grid-2">
+    <div id="block-menu-block-3" class="block block-menu-block  block-3 block-menu-block-3 first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title"><a href="http://www.acquia.com/partners">Partners</a></h2>
+            
+    <div class="content clearfix">
+      <div class="menu-block-wrapper menu-block-3 menu-name-main-menu parent-mlid-703 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-734 contains-link"><a href="http://www.acquia.com/partners">Partner program</a></li>
+<li class="leaf menu-mlid-735 contains-link"><a href="http://www.acquia.com/partners/finder">Partner Finder</a></li>
+<li class="last leaf menu-mlid-1330 contains-link"><a href="http://www.acquia.com/partners/become-an-acquia-partner">Become a Partner</a></li>
+</ul></div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-2-4" class="region region-footer-2-4 grid-2">
+    <div id="block-menu-block-4" class="block block-menu-block  block-4 block-menu-block-4 first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title"><a href="http://www.acquia.com/about-us">About</a></h2>
+            
+    <div class="content clearfix">
+      <div class="menu-block-wrapper menu-block-4 menu-name-main-menu parent-mlid-494 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-739 contains-link"><a href="http://www.acquia.com/careers">Careers</a></li>
+<li class="leaf has-children menu-mlid-740 contains-link"><a href="http://www.acquia.com/about-us/newsroom">Newsroom</a></li>
+<li class="leaf menu-mlid-1536 contains-link"><a href="http://www.acquia.com/about-us/leadership">Leadership</a></li>
+<li class="leaf menu-mlid-794 contains-link"><a href="http://www.acquia.com/about-us/team">Team</a></li>
+<li class="leaf menu-mlid-741 contains-link"><a href="http://www.acquia.com/about-us/investors">Investors</a></li>
+<li class="leaf has-children menu-mlid-1016 contains-link"><a href="http://www.acquia.com/about-us/contact">Contact</a></li>
+<li class="last leaf menu-mlid-3266 contains-link"><a href="http://www.acquia.com/about-us/board">Board of directors</a></li>
+</ul></div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-2-5" class="region region-footer-2-5 grid-2">
+    <div id="block-boxes-footer-social-links" class="block block-boxes  block-footer-social-links block-boxes-footer-social-links first last odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <div id="boxes-box-footer_social_links" class="boxes-box"><div class="boxes-box-content"><div style="width:143px;margin-left:-20px;">
+<div style="width:32px; padding-right:5px; float:left;"><a href="http://twitter.com/acquia" target="_blank" title="Follow Acquia on Twitter" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'Twitter Footer Link']);"><img src="drupal-search-how-indexing-works_files/twitter-social.png" alt="Follow Acquia on Twitter" border="0" width="32"></a></div>
+<div style="width:32px; padding-right:5px; float:left;"><a href="http://www.facebook.com/acquia" target="_blank" title="Become an Acquia Fan on Facebook" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'Facebook Footer Link']);"><img src="drupal-search-how-indexing-works_files/facebook-social.png" alt="Become an Acquia Fan on Facebook" border="0" width="32"></a></div>
+<div style="width:32px; padding-right:5px; float:left;"><a href="http://youtube.com/acquiatv" target="_blank" title="Acquia's YouTube Channel" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'YouTube Footer Link']);"><img src="drupal-search-how-indexing-works_files/youtube-social.png" alt="Acquia's YouTube Channel" border="0" width="32"></a></div>
+<div style="width:32px; float:left;"><a href="http://www.linkedin.com/pub/acquia-team/16/447/70" target="_blank" title="LinkedIn" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'LinkedIn Footer Link']);"><img src="drupal-search-how-indexing-works_files/linkedin-social.png" alt="LinkedIn" border="0" width="32"></a></div>
+<div style="width:32px; padding-right:5px; float:left; padding-top:10px;"><a href="http://community.spiceworks.com/pages/Acquia/follow" target="_blank" title="Follow us on Spiceworks" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'Spiceworks Footer Link']);"><img src="drupal-search-how-indexing-works_files/spiceworks-social.png" alt="Follow us on Spiceworks" border="0" width="32"></a></div>
+<div style="width:32px; float:left;padding-right:5px; float:left;  padding-top:11px;"><a href="https://plus.google.com/115129783992912785694?prsrc=3" style="text-decoration: none;" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'Google+ Footer Link']);"><img src="drupal-search-how-indexing-works_files/gplus-32.png" alt="" style="border: 0pt none; width: 32px; height: 32px;"></a></div>
+<div style="width:32px; float:left;padding-right:5px; float:left;  padding-top:11px;"><a href="http://pinterest.com/acquia/" target="_blank" title="Acquia's Pinterest" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'Pinterest Footer Link']);"><img src="drupal-search-how-indexing-works_files/big-p-button.gif" alt="Follow Me on Pinterest" width="32"></a></div>
+<div style="width:32px; float:left; padding-top:12px;"><a href="http://www.acquia.com/stay-informed" target="_blank" title="Stay informed email list" onclick="_gaq.push(['_trackEvent', 'Social', 'Click', 'Email Footer Link']);"><img src="drupal-search-how-indexing-works_files/email-social.png" alt="Stay Informed Email List" border="0" width="32"></a></div>
+</div>
+</div></div>    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-2-6" class="region region-footer-2-6 grid-2">
+    <div id="block-boxes-footer-acquia" class="block block-boxes  block-footer-acquia block-boxes-footer-acquia first last odd">
+  <div class="inner clearfix">
+              <h2 class="block-title">Acquia</h2>
+            
+    <div class="content clearfix">
+      <div id="boxes-box-footer_acquia" class="boxes-box"><div class="boxes-box-content"><ul><li>Sales: <span class="acquia-phone acquia-phones-sales">855.430.7700</span></li>
+<li>General/International: <span class="acquia-phone acquia-phones-international">+1.781.238.8600</span>
+</li><li class="contains-link"><a href="http://www.acquia.com/about-us/contact/products-services">Have sales contact you</a></li>
+</ul></div></div>    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div><div id="zone-footer-3-wrapper" class="zone-wrapper zone-static-wrapper zone-footer-3-wrapper clearfix">  
+  <div id="zone-footer-3" class="zone zone-footer-3 zone-static container-16 clearfix horizontal reverse">
+      <div id="region-footer-3-1" class="region region-footer-3-1 grid-4">
+    <div id="block-menu-block-8" class="block block-menu-block  block-8 block-menu-block-8 first odd">
+  <div class="inner clearfix">
+              <h2 class="block-title">Footer menu</h2>
+            
+    <div class="content clearfix">
+      <div class="menu-block-wrapper menu-block-8 menu-name-menu-other-menu parent-mlid-785 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-3511 contains-link"><a href="http://www.acquia.com/feeds">Feeds</a></li>
+<li class="leaf menu-mlid-1331 contains-link"><a href="http://www.acquia.com/about-us/legal">Legal</a></li>
+<li class="last leaf menu-mlid-4081 contains-link"><a href="http://www.acquia.com/how-report-security-issue" title="How to report a security issue">Security issue?</a></li>
+</ul></div>
+    </div>
+  </div>
+</div>
+<div id="block-block-16" class="block block-block  block-16 block-block-16 last even block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <!--Begin Manticore Technology Code-->
+<!--Copyright 2000-2010, Manticore Technology Corporation.  All rights reserved.  Patent pending.--> 
+<!--Consumer Privacy Statement available at www.ManticoreTechnology.com/ConsumerPrivacy.asp-->
+<!--www.ManticoreTechnology.com-->
+<script language="JavaScript">
+//<!--
+	var MTC_GROUP="543";
+	var MTC_ID="11033";
+	var MTC_Key="F9CDB39A-F487-4BFC-A8E3-F6A6C5581B12";
+//-->
+</script>
+<script language="JavaScript">var MTCjsv;</script>
+<script language="JavaScript1.0">MTCjsv="1.0";</script>
+<script language="JavaScript1.1">MTCjsv="1.1";</script>
+<script language="JavaScript1.2">MTCjsv="1.2";</script>
+<script language="JavaScript1.3">MTCjsv="1.3";</script>
+<script language="JavaScript1.4">MTCjsv="1.4";</script>
+<script language="JavaScript1.5">MTCjsv="1.5";</script>
+<script language="JavaScript1.6">MTCjsv="1.6";</script>
+<script language="JavaScript1.7">MTCjsv="1.7";</script>
+<script language="JavaScript" src="drupal-search-how-indexing-works_files/mtcJSAPI.js"></script>
+<!--Begin Optional Configuration-->
+<script language="JavaScript">
+//<!--
+	//Todo:	Implement site specific functionality here.
+	//mtcSetServerGroup("");
+	//mtcSetContentCategory("");
+	
+//-->
+</script>
+<!--End Optional Configuration-->
+<script language="JavaScript">
+//<!--
+	mtcGO();
+//-->
+</script>
+<!--End Manticore Technology Code-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23698964-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-3-2" class="region region-footer-3-2 grid-4">
+    <div id="block-block-24" class="block block-block olark-chat block-24 block-block-24 first last odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <!-- begin olark code --><script type="text/javascript">/*{literal}<![CDATA[*/window.olark||(function(i){var e=window,h=document,a=e.location.protocol=="https:"?"https:":"http:",g=i.name,b="load";(function(){e[g]=function(){(c.s=c.s||[]).push(arguments)};var c=e[g]._={},f=i.methods.length; while(f--){(function(j){e[g][j]=function(){e[g]("call",j,arguments)}})(i.methods[f])} c.l=i.loader;c.i=arguments.callee;c.f=setTimeout(function(){if(c.f){(new Image).src=a+"//"+c.l.replace(".js",".png")+"&"+escape(e.location.href)}c.f=null},20000);c.p={0:+new Date};c.P=function(j){c.p[j]=new Date-c.p[0]};function d(){c.P(b);e[g](b)}e.addEventListener?e.addEventListener(b,d,false):e.attachEvent("on"+b,d); (function(){function l(j){j="head";return["<",j,"></",j,"><",z,' onl'+'oad="var d=',B,";d.getElementsByTagName('head')[0].",y,"(d.",A,"('script')).",u,"='",a,"//",c.l,"'",'"',"></",z,">"].join("")}var z="body",s=h[z];if(!s){return setTimeout(arguments.callee,100)}c.P(1);var y="appendChild",A="createElement",u="src",r=h[A]("div"),G=r[y](h[A](g)),D=h[A]("iframe"),B="document",C="domain",q;r.style.display="none";s.insertBefore(r,s.firstChild).id=g;D.frameBorder="0";D.id=g+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){D.src="javascript:false"} D.allowTransparency="true";G[y](D);try{D.contentWindow[B].open()}catch(F){i[C]=h[C];q="javascript:var d="+B+".open();d.domain='"+h.domain+"';";D[u]=q+"void(0);"}try{var H=D.contentWindow[B];H.write(l());H.close()}catch(E){D[u]=q+'d.write("'+l().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}c.P(2)})()})()})({loader:(function(a){return "static.olark.com/jsclient/loader0.js?ts="+(a?a[1]:(+new Date))})(document.cookie.match(/olarkld=([0-9]+)/)),name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('2074-310-10-9406');/*]]>{/literal}*/</script>
+<!-- end olark code -->
+    </div>
+  </div>
+</div>
+  </div>
+  <div id="region-footer-3-4" class="region region-footer-3-4 grid-16">
+    <div id="block-boxes-drupal-trademark" class="block block-boxes  block-drupal-trademark block-boxes-drupal-trademark first odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <div id="boxes-box-drupal_trademark" class="boxes-box"><div class="boxes-box-content"><div style="color: #999999; margin-top: 20px;">Drupal is a registered trademark of <a href="http://buytaert.net/resume">Dries Buytaert</a>.</div>
+</div></div>    </div>
+  </div>
+</div>
+<div id="block-boxes-google-analytics-2" class="block block-boxes  block-google-analytics-2 block-boxes-google-analytics-2 even block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <div id="boxes-box-google_analytics_2" class="boxes-box"><div class="boxes-box-content"></div></div>    </div>
+  </div>
+</div>
+<div id="block-block-26" class="block block-block  block-26 block-block-26 last odd block-without-title">
+  <div class="inner clearfix">
+                
+    <div class="content clearfix">
+      <!-- Start of HubSpot Logging Code  -->
+<script type="text/javascript" language="javascript">
+var hs_portalid=126735; 
+var hs_salog_version = "2.00";
+var hs_ppa = "acquia.app11.hubspot.com";
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//" + hs_ppa + "/salog.js.aspx' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="drupal-search-how-indexing-works_files/salog.htm" type="text/javascript"></script><script src="drupal-search-how-indexing-works_files/salog20.js" type="text/javascript"></script><span id="hsjssp">
+<img src="drupal-search-how-indexing-works_files/track.txt" border="0" height="0" width="0"></span>
+
+<!-- End of HubSpot Logging Code -->    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div></div>  </div>  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-23698964-1"]);_gaq.push(["_trackPageview"]);_gaq.push(["_trackPageLoadTime"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = "http://www.acquia.com/sites/default/files/googleanalytics/ga.js?m0816j";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+
+<iframe style="display: none;" src="drupal-search-how-indexing-works_files/getSegment.htm" name="stSegmentFrame" id="stSegmentFrame" frameborder="0" height="0px" scrolling="no" width="0px"></iframe><div style="visibility: hidden; top: -999px; left: -999px; width: 500px; z-index: 89999999;" class="stwrapper" id="stwrapper"><div class="stCloseNew2"></div><iframe src="drupal-search-how-indexing-works_files/index.htm" style="top: 0px; left: 0px;" name="stLframe" class="stLframe" id="stLframe" allowtransparency="true" frameborder="0" height="430px" scrolling="no" width="500px"></iframe></div><div id="stOverlay" style="height: 100%; width: 100%; background-color: rgb(0, 0, 0); opacity: 0.6; position: fixed; display: none; left: 0pt; top: 0pt; z-index: 89999990;"></div><span style="display: none;"><iframe src="drupal-search-how-indexing-works_files/storage.htm" style="display: none ! important;" id="framesocket54780" onload="try{window.framesocket54780()}catch(e){framesocket54780()}"></iframe></span><div class="habla-browser-firefox habla-desktop olrk-noquirks" id="habla_beta_container_do_not_rely_on_div_classes_or_names"><div class="olrk-away" id="hbl_operator_state_div"><div class="olrk-normal" id="hbl_region"><div class=" olrk-state-compressed" id="habla_window_state_div"><div class="habla_window_div_base hbl_pal_main_width olrk-fixed-bottom olrk-fixed-right " style="margin: 0px 10px 0px 20px; bottom: 0px; right: 0px; display: block; position: fixed;" id="habla_window_div"><div style="display: block;" class="olrk-left-align" id="habla_compressed_div"></div><div class="habla_panel_border hbl_pal_main_bg hbl_pal_panel_border hbl_pal_main_font_family hbl_pal_main_font_size " style="display: block;" id="habla_panel_div"><div style="display: block;" id="habla_both_div"><div class="habla_topbar_div_normal hbl_pal_title_fg hbl_pal_title_bg habla_topbar_div_compressed " id="habla_topbar_div"><a class="habla_oplink_a_normal hbl_pal_header_font_size hbl_pal_title_fg " id="habla_oplink_a">Contact us!</a><a class="habla_button habla_button_a_normal hbl_pal_header_font_size hbl_pal_main_font_family hbl_pal_button_bg hbl_pal_button_fg " id="habla_sizebutton_a">^</a></div><span id="olrk_tab_closure_span"></span></div><div style="display: none;" id="habla_expanded_div"><div id="habla_middle_div"><div id="habla_middle_wrapper_div"><div class="hbl_panel habla_conversation_div hbl_pal_main_height hbl_pal_control_border hbl_pal_main_fg hbl_pal_main_bg   habla_conversation_message_on " style="height: 150px; overflow: hidden; display: none;" id="habla_conversation_div"><span id="hbl_body_message">We are here! How can we assist you?</span></div><div class="hbl_panel habla_offline_message_sent_div hbl_pal_main_height hbl_pal_control_border hbl_pal_main_fg " style="display: none;" id="habla_offline_message_sent_div">Thanks for your message!  We'll get back to you shortly.</div><div class="hbl_panel habla_offline_message_div hbl_pal_control_border hbl_pal_main_fg " style="display: block;" id="habla_offline_message_div"><span id="habla_offline_message_span">We're not around, but we'd love to chat another time.</span><div class="hbl_txt_wrapper"><textarea class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="height: 20px; display: block;" name="habla_name_input" id="habla_name_input">&lt;click here&gt; and type your Name</textarea></div><div class="hbl_txt_wrapper"><textarea class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="height: 20px; display: block;" name="habla_offline_email_input" id="habla_offline_email_input">&lt;click here&gt; and type your Email</textarea></div><div class="hbl_txt_wrapper"><textarea class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="height: 65px; display: block;" name="habla_offline_body_input" id="habla_offline_body_input">We're not around but we still want to hear from you!  Leave us a note:</textarea></div><br id="habla_br"><span class="habla_offline_error_span " id="habla_offline_error_span"></span><input style="display: block;" value="Send" class="habla_offline_submit_input hbl_pal_offline_submit_fg hbl_pal_control_border hbl_pal_offline_submit_bg " name="habla_offline_submit_input" id="habla_offline_submit_input" type="submit"><div class="clear_style " id="habla_offline_clear_div"></div></div><div class="hbl_panel habla_pre_chat_div hbl_pal_main_height hbl_pal_main_fg " style="display: none; height: 150px;" id="habla_pre_chat_div"><span id="habla_pre_chat_span">Hi, I am around, click 'start chatting' to contact me.</span><div class="hbl_txt_wrapper"><textarea class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="height: 20px; line-height: 20px;" name="habla_pre_chat_name_input" id="habla_pre_chat_name_input">&lt;click here&gt; and type your Name</textarea></div><div class="hbl_txt_wrapper"><textarea class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="height: 20px; line-height: 20px;" name="habla_pre_chat_email_input" id="habla_pre_chat_email_input">&lt;click here&gt; and type your Email</textarea></div><div style="display: none;" class="hbl_txt_wrapper"><textarea class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="height: 20px; line-height: 20px; display: none;" name="habla_pre_chat_phone_input" id="habla_pre_chat_phone_input">undefined</textarea></div><br id="habla_br_2"><span id="habla_pre_chat_error_span"></span><input value="Click here to start chatting" class="habla_pre_chat_form_field habla_offline_submit_input hbl_pal_offline_submit_fg hbl_pal_control_border hbl_pal_offline_submit_bg " name="habla_pre_chat_submit_input" id="habla_pre_chat_submit_input" type="submit"><div class="clear_style " id="habla_pre_chat_clear_div"></div></div></div><form style="display: none;" class="habla_chatform_form " autocomplete="off" method="GET" action="#" id="habla_chatform_form"><div class="habla_input_div " id="habla_input_div"><div class="hbl_txt_wrapper"><textarea disabled="disabled" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " style="line-height: 20px; height: 20px; display: none;" size="undefined" name="habla_wcsend_input" id="habla_wcsend_input">Type here and hit &lt;enter&gt; to chat</textarea></div></div></form></div><div style="padding: 3px 0 5px 0 !important; font-family: helvetica, sans-serif; text-align: center; text-transform: uppercase; font-size: 9px; letter-spacing: 2px; font-weight: bold; color: #aaa !important;"><span style="display:none"><a style="font-family: helvetica,sans-serif; text-transform: uppercase; font-size: 9px ! important; letter-spacing: 2px; font-weight: bold; color: rgb(231, 89, 23) ! important;" id="hblink9"></a>http://www.olark.com</span>Powered By <a style="font-family: helvetica,sans-serif; text-transform: uppercase; font-size: 9px ! important; letter-spacing: 2px; font-weight: bold; color: rgb(231, 89, 23) ! important;" href="http://www.olark.com/?rid=2074-310-10-9406&amp;rid=2074-310-10-9406&amp;utm_medium=widget&amp;utm_campaign=powered_by&amp;utm_source=2074-310-10-9406" id="hblink99" target="_blank">Olark</a></div></div></div><div style="display: none;" id="habla_closed_div"></div></div></div></div></div></div></body></html>

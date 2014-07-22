@@ -1,0 +1,178 @@
+<!--/////////////////////////////////////////////////////////////////////////
+//
+// Filename:    blockFrame.html
+//
+// Description: This fills in the bottom portion of the Websense block
+//		message when the user is blocked with a regular block option
+//
+/////////////////////////////////////////////////////////////////////////////
+//
+//                          PROPRIETARY MATERIALS
+//
+//   Websense, Inc. (Websense) has prepared this material for use by
+//   Websense personnel, licensees, and customers.  The information
+//   contained herein is the property of Websense and shall not be
+//   reproduced in whole or part without the prior written consent of an
+//   authorized representative of Websense, Inc.
+//
+//                          RESTRICTED RIGHTS LEGEND
+//
+//   Use, duplication  or disclosure  by the U.S. Government is subject
+//   to restrictions as set forth in Technical Data and Computer Software
+//   at 48 CFR 252.227-7015 and 48 CFR 227.27.  All other Government use,
+//   duplication or disclosure shall be governed exclusively by the terms
+//   of the Websense Subscription Agreement. The manufacturer is Websense,
+//   Inc.
+//
+//
+//                          Copyright (c) 1996 - 2006
+//                             All Rights Reserved
+//                               Websense, Inc.
+//                          10240 Sorrento Valley Rd
+//                            San Diego, CA 92121
+//                              (858) 320-8000
+//
+/////////////////////////////////////////////////////////////////////////////
+// Note:  The following tokens described below are activated when a 
+//        is added to the beginning and end of the token
+//
+// 1) *WS_MOREINFOCGIDATA*
+//      - Outputs data pertinent to the "More Information" link.
+//
+// 2) *WS_PASSWORDOVERRIDE-BEGIN* *WS_PASSWORDOVERRIDE-END*
+//	- These two tokens must surround the html form used to display the
+//	  "Password Override" password field and submit button.  Together,
+//	  these tokens will comment out the Password Override form if it
+//	  should not be displayed.  Otherwise, these tokens will output
+//	  nothing if the Password Override form is selected, allowing the
+//	  password field and submit button to be displayed.
+//
+//
+///////////////////////////////////////////////////////////////////////////-->
+<html><head>
+
+<!-- A particular character set can be specified by assigning "charset".-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="blockOptions_data/blockStyle.css" type="text/css">
+</head>
+
+<!-- Default colors are BLACK text and WHITE background -->
+<body bgcolor="#FFFFFF" text="#000000">
+
+<!-- The entire page is structured using embedded tables. -->
+<table border="0" cellpadding="0" cellspacing="0" width="600">
+  <tbody><tr>
+    <td><img src="blockOptions_data/spacer.gif" height="1" width="100"></td>
+    <td><img src="blockOptions_data/spacer.gif" height="1" width="100"></td>
+    <td><img src="blockOptions_data/spacer.gif" height="1" width="500"></td>
+  </tr>
+  <tr>
+    <td><img src="blockOptions_data/spacer.gif" height="100" width="100"></td>
+    <td valign="top" align="right">
+      <p class="bold" id="OptionsLabel">Options:&nbsp;</p>
+    </td>
+    <td>
+      <table bgcolor="#003399" border="0" cellpadding="1" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td>
+            <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr>
+                <td><img src="blockOptions_data/spacer.gif" height="1" width="370"></td>
+                <td><img src="blockOptions_data/spacer.gif" height="1" width="130"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <table border="0" cellpadding="3" cellspacing="0" width="100%">
+                    <tbody><tr>
+                      <td>
+                        <p id="MoreInfoText">Click
+                          <!-- This displays the "More Information" link		-->
+                          <!-- We recommend that the URL up to and including the 	-->
+                          <!-- *WS_MOREINFOCGIDATA* token should be kept intact  	-->
+                          <!-- when modifying				      	-->
+                          <a href="http://10.108.26.183:15871/cgi-bin/moreBlockInfo.cgi?ws-encdata=d3MlMkRzZXNzaW9uPTE0ODg3MDc0NTYmd3MlMkR1c2VyaXA9MTAlMkUxMDglMkU1OSUyRTQyJndzJTJEY2F0PTk5JndzJTJEcmVhc29uPTEwMjU=" target="ws_block" id="moreInfo">more information</a> to learn more about your access policy.</p>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+              
+<!--
+
+              <tr>
+                <td colspan="2">
+                  <hr size="1" noshade>
+                </td>
+              </tr>
+				<form action="/cgi-bin/password_overrider.cgi" method="POST" target="_top" name="OverrideForm">
+                <input type="HIDDEN" name="ws-encdata" value="d3MlMkRzZXNzaW9uPTE0ODg3MDc0NTYmd3MlMkR1c2VyaXA9MTAlMkUxMDglMkU1OSUyRTQyJndzJTJEY2F0PTk5JndzJTJEcmVhc29uPTEwMjUmd3MlMkR1c2VyaXA9MTAlMkUxMDglMkU1OSUyRTQy">
+                <tr>
+                  <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                      <tr>
+                        <td>
+                          <p id="PasswordText">Enter your Websense password, and then click the
+                            <b>Password Override</b> button to view this site.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td valign="bottom">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="3">
+                      <tr>
+                        <td align="right">
+                          <p id="PasswordLabel">Password:&nbsp;
+                            <input type="password" name="ws-password" size="20" maxlength="55">
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="bottom" align="center">
+                    <p id="PasswordButton">
+                      <input TYPE="SUBMIT" VALUE="Password Override" name="ws-override">
+                    </p>
+                  </td>
+                </tr>
+              </form>
+              
+-->
+
+              <tr>
+                <td colspan="2">
+                  <hr noshade="noshade" size="1">
+                </td>
+              </tr>
+              <tr>
+                <td valign="bottom">
+                  <table border="0" cellpadding="3" cellspacing="0" width="100%">
+                    <tbody><tr>
+                      <td>
+                        <p id="BackText">Click <b>Go Back</b> or use the browser's Back button
+                          to return to the previous page.</p>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+                <td valign="bottom" align="center">
+                  <form name="BackForm">
+                    <p id="BackButton">
+                      <input value="       Go Back       " onclick="parent.history.back()" name="ws-back" type="button">
+                    </p>
+                  </form>
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
+
+</body></html>
